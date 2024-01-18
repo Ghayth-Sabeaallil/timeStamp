@@ -1,4 +1,40 @@
-@import url("./base/__base.scss");
-@import url("./components/analog.scss");
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Righteous&display=swap");
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  min-height: 100vh;
+}
+
+.analog-header {
+  margin: 1em 1em 1em 1em;
+  display: flex;
+}
+.analog-header img {
+  padding-right: 8.5rem;
+}
+.analog-header p {
+  color: #222222;
+  font-family: "PT Sans";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 2px;
+}
+
+.analog-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+}
 
 /*# sourceMappingURL=style.css.map */
