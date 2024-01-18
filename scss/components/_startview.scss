@@ -1,0 +1,35 @@
+@import "../abstracts/color";
+@import "../abstracts/fonts";
+
+body{
+    background-color: $firstpage-background-color;
+}
+
+.loading-vy{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scale: 1.2;
+
+    #logo {
+        transition: opacity 2500ms ease-in-out;
+        opacity: 1;
+      }
+      @keyframes pulsate {
+        50% {
+          opacity: 0.5;
+        }
+      }
+      #logo {
+        animation: pulsate 2500ms infinite;
+      }
+      
+}
+
+
+
+
+
+
