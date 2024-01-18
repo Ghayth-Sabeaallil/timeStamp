@@ -19,7 +19,7 @@ body {
   background: radial-gradient(circle farthest-corner at center center, #393939 11%, #313131 20%, #262626 50%, #222222 62%);
 }
 
-.break-view {
+.alarm-view {
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -27,24 +27,19 @@ body {
   font-family: "PT sans", sans-serif;
   color: #FFFFFF;
 }
-.break-view .timer {
+.alarm-view .alarm {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: auto;
   gap: 2rem;
 }
-.break-view .timer h2 {
+.alarm-view .alarm h2 {
   font-size: 2.25rem;
   letter-spacing: 0.25rem;
   font-weight: bold;
 }
-.break-view .timer h3 {
-  font-size: 1.5rem;
-  color: #999999;
-  font-weight: normal;
-}
-.break-view .button {
+.alarm-view .button {
   align-self: center;
   margin-bottom: 3rem;
 }
