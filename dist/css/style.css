@@ -1,3 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Righteous&display=swap");
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+body {
+  width: 100vw;
+  min-height: 100vh;
+}
+
+body {
+  background-color: #000000;
+}
+
+.loading-vy {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  scale: 1.2;
+}
+.loading-vy #logo {
+  transition: opacity 2500ms ease-in-out;
+  opacity: 1;
+}
+@keyframes pulsate {
+  50% {
+    opacity: 0.5;
+  }
+}
+.loading-vy #logo {
+  animation: pulsate 2500ms infinite;
+}
 
 /*# sourceMappingURL=style.css.map */
