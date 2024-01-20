@@ -19,9 +19,65 @@
         letter-spacing: 2px;
     }
 }
-.analog-main{
+
+.analog-main {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 90vh;
+    flex-direction: column;
+    height: 85vh;
+    gap: 8rem;
+
+    .clock {
+        display: contents;
+
+        .sec {
+            position: absolute;
+            padding-bottom: 7.5rem;
+            margin-bottom: 10.8rem;
+            animation: secondsMotion 3s infinite linear;        
+            animation-play-state: running;
+            transform-origin: center;
+        }
+
+        .min {
+            position: absolute;
+            padding-bottom: 7.25rem;
+            margin-bottom: 10.8rem;
+            transform-origin: center;
+        }
+
+        @keyframes secondsMotion {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    }
+
+
+    .abrot-timer {
+        display: inline-flex;
+        padding: 10px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        border-radius: 5px;
+        border: 1px solid #222;
+        opacity: 0.6;
+        color: $font-color-primary;
+        text-align: center;
+        font-family: "PT Sans";
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: 1.6px;
+        text-transform: uppercase;
+    }
+
+
 }
