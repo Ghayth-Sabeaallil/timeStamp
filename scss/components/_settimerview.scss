@@ -1,7 +1,6 @@
 @import "../abstracts/color";
 @import "../abstracts/fonts";
 
-
 body{
     display: flex;
     flex-direction: column;
@@ -14,9 +13,8 @@ body{
     .set-timer-vy{
         align-self: center;
         font-family: $font-pt-family;
-        width: 20rem;
+        width: auto;
         .set-time{
-            border: 1px solid red;
             display: flex;
             flex-direction: row;
             width: 280px;
@@ -65,3 +63,19 @@ body{
         }
     }
 }
+.analog-header {
+    margin: 1em 1em 1em 1em;
+    display: flex;
+  }
+  .analog-header img {
+    padding-right: 8.5rem;
+  }
+  .analog-header p {
+    color: #222222;
+    font-family: "PT Sans";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 2px;
+  }

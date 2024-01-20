@@ -26,10 +26,9 @@ body header {
 body .set-timer-vy {
   align-self: center;
   font-family: "PT sans", sans-serif;
-  width: 20rem;
+  width: auto;
 }
 body .set-timer-vy .set-time {
-  border: 1px solid red;
   display: flex;
   flex-direction: row;
   width: 280px;
@@ -75,6 +74,25 @@ body .set-timer-vy .start-button {
   font-size: 1.4rem;
   letter-spacing: 0.2rem;
   font-weight: 100;
+}
+
+.analog-header {
+  margin: 1em 1em 1em 1em;
+  display: flex;
+}
+
+.analog-header img {
+  padding-right: 8.5rem;
+}
+
+.analog-header p {
+  color: #222222;
+  font-family: "PT Sans";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 2px;
 }
 
 /*# sourceMappingURL=style.css.map */
