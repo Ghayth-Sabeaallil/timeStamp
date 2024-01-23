@@ -18,7 +18,7 @@ body {
   display: flex;
 }
 .header img {
-  padding-right: 8.5rem;
+  padding-right: 7.5rem;
 }
 .header p {
   color: #222222;
@@ -28,10 +28,6 @@ body {
   font-weight: 400;
   line-height: normal;
   letter-spacing: 2px;
-}
-
-.main {
-  display: block;
 }
 
 .analog-main {
@@ -49,7 +45,7 @@ body {
   position: absolute;
   padding-bottom: 7.5rem;
   margin-bottom: 10.8rem;
-  animation: secondsMotion 60s infinite linear;
+  animation: secondsMotion 3s infinite linear;
   animation-play-state: running;
   transform-origin: center;
 }

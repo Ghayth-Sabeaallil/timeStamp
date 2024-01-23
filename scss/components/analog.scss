@@ -6,7 +6,7 @@
     display: flex;
 
     img {
-        padding-right: 8.5rem;
+        padding-right: 7.5rem;
     }
 
     p {
@@ -19,9 +19,7 @@
         letter-spacing: 2px;
     }
 }
-.main{
-    display: block; 
-}
+
 
 .analog-main {
     display: flex;
@@ -38,7 +36,7 @@
             position: absolute;
             padding-bottom: 7.5rem;
             margin-bottom: 10.8rem;
-            animation: secondsMotion 60s infinite linear;
+            animation: secondsMotion 3s infinite linear;
             animation-play-state: running;
             transform-origin: center;
         }
