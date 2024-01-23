@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Righteous&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Righteous&display=swap");
 *,
 *::after,
 *::before {
@@ -9,90 +11,57 @@
 }
 
 body {
-  width: 100vw;
-  min-height: 100vh;
+  height: 100vh;
 }
 
 body {
+  background-color: #393939;
+  background: radial-gradient(
+    circle farthest-corner at center center,
+    #393939 11%,
+    #313131 20%,
+    #262626 50%,
+    #222222 62%
+  );
+}
+
+.alarm-view {
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  color: #222222;
-}
-body header {
-  padding-left: 1rem;
-  padding-top: 1rem;
-}
-body .set-timer-vy {
-  align-self: center;
   font-family: "PT sans", sans-serif;
-  width: auto;
+  color: #ffffff;
 }
-body .set-timer-vy .set-time {
+.alarm-view .alarm {
   display: flex;
-  flex-direction: row;
-  width: 280px;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  gap: 2rem;
 }
-body .set-timer-vy .set-time .set-time-number {
-  text-align: center;
+.alarm-view .alarm h2 {
+  font-size: 2.25rem;
+  letter-spacing: 0.25rem;
+  font-weight: bold;
 }
-body .set-timer-vy .set-time .set-time-number h1 {
-  font-size: 5rem;
-  height: 5.5rem;
+.alarm-view .button {
+  align-self: center;
+  margin-bottom: 3rem;
 }
-body .set-timer-vy .set-time .set-time-number h3 {
+
+button {
+  background-color: transparent;
+  color: #999999;
   font-size: 1rem;
-  font-weight: 100;
-  color: rgba(34, 34, 34, 0.6);
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 1rem;
+  border: 1px solid #999999;
+  border-radius: 5px;
 }
-body .set-timer-vy ul {
-  margin-top: 10rem;
-  margin-bottom: 2rem;
-  letter-spacing: 0.13rem;
-}
-body .set-timer-vy ul li {
-  font-size: 1.3rem;
-  display: flex;
-  gap: 1rem;
-  display: flex;
-  align-items: center;
-  margin-top: 1rem;
-}
-body .set-timer-vy ul li .checkbox {
-  height: 1.3rem;
-  width: 1.3rem;
-}
-body .set-timer-vy .start-button {
-  border: 0.15rem solid black;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 6rem;
-  height: 3.6rem;
-  border-radius: 0.6rem;
-  font-size: 1.4rem;
-  letter-spacing: 0.2rem;
-  font-weight: 100;
-}
-
-.analog-header {
-  margin: 1em 1em 1em 1em;
-  display: flex;
-}
-
-.analog-header img {
-  padding-right: 8.5rem;
-}
-
-.analog-header p {
-  color: #222222;
-  font-family: "PT Sans";
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  letter-spacing: 2px;
+button:active {
+  background-color: #ffffff;
 }
 
 /*# sourceMappingURL=style.css.map */
