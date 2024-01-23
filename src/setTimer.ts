@@ -1,5 +1,11 @@
 const timeDisplay = document.getElementById("time-number");
 
+import Timer from "easytimer.js";
+const timer = new Timer();
+
+timer.start({ countdown: true, startValues: { seconds: 30 }, target: { seconds: 0 } });
+console.log(timer);
+
 function increaseTimeFunc() {
   let timeInt = parseInt(timeDisplay.textContent);
   if (timeInt! < 60) {
