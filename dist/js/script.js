@@ -1,9 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-console.log("test");
 const easytimer_js_1 = require("easytimer.js");
-const timer = new easytimer_js_1.Timer();
+const timer = new easytimer_js_1.default();
+timer.start({ countdown: true, startValues: { seconds: 10 }, target: { seconds: 0 } });
 timer.addEventListener("secondsUpdated", function () {
     const timeValues = timer.getTimeValues();
+    localStorage.setItem("timeLeft", `${timeValues}`);
     console.log("Remaining seconds:", timeValues.seconds);
 });
