@@ -1,2 +1,50 @@
 @import url("./base/__base.scss");
 @import url("./components/analog.scss");
+@import 'components/home.scss';
+@import 'abstracts/_fonts.scss';
+@import url("./base/__base.scss");
+@import 'abstracts/_color.scss';
+
+
+.menu-bar{
+    color:$font-color-primary;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-bar img {
+    margin-right: auto; 
+}
+
+.timer-options{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+    ul{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 2rem;
+        
+    }
+    li{
+        list-style-type: none;
+        a{
+            font-size: 24px;
+            font-family: $font-pt-family;
+            font-weight: 700;
+            text-decoration: none;
+            text-transform: uppercase;
+            color: $font-color-primary;
+        }
+    }
+}
+
+
+@media screen and (device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3){
+}
+
+
+
