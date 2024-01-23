@@ -1,8 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const script_1 = require("./script");
 const buttonSetNewTimer = document.getElementById("setNewTimer");
 function addEventListners() {
     buttonSetNewTimer.addEventListener("click", newTimer);
 }
 function newTimer() {
-    console.log("Hello");
+    (0, script_1.stopTimer)();
 }
 addEventListners();
