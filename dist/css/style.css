@@ -13,14 +13,14 @@ body {
   min-height: 100vh;
 }
 
-.analog-header {
+.header {
   margin: 1em 1em 1em 1em;
   display: flex;
 }
-.analog-header img {
+.header img {
   padding-right: 8.5rem;
 }
-.analog-header p {
+.header p {
   color: #222222;
   font-family: "PT Sans";
   font-size: 20px;
@@ -28,6 +28,10 @@ body {
   font-weight: 400;
   line-height: normal;
   letter-spacing: 2px;
+}
+
+.main {
+  display: block;
 }
 
 .analog-main {
@@ -45,7 +49,7 @@ body {
   position: absolute;
   padding-bottom: 7.5rem;
   margin-bottom: 10.8rem;
-  animation: secondsMotion 3s infinite linear;
+  animation: secondsMotion 60s infinite linear;
   animation-play-state: running;
   transform-origin: center;
 }
@@ -63,7 +67,7 @@ body {
     transform: rotate(360deg);
   }
 }
-.analog-main .abrot-timer {
+.analog-main .abrot-timer-analog {
   display: inline-flex;
   padding: 10px;
   justify-content: center;

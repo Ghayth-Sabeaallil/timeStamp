@@ -8,17 +8,19 @@
     <script src="./js/script.js" defer></script>
   </head>
   <body>
-    <header class="analog-header">
+    <header class="header">
       <img src="../svg/navicon.svg" alt="" />
       <p>interval</p>
     </header>
-    <main class="analog-main">
-      <div class="clock">
-        <img class="clock-img" src="../svg/clock.svg" alt="" />
-        <img class="min" src="../svg/hourHandle.svg" alt="" />
-        <img class="sec" src="../svg/minHandle.svg" alt="" />
+    <main class="main">
+      <div class="analog-main">
+        <div class="clock">
+          <img class="clock-img" src="../svg/clock.svg" alt="" />
+          <img class="min" src="../svg/hourHandle.svg" alt="" />
+          <img class="sec" src="../svg/minHandle.svg" alt="" />
+        </div>
+        <button class="abrot-timer-analog" onclick="stop()">ABORT timer</button>
       </div>
-      <button class="abrot-timer" onclick="stop()">ABORT timer</button>
     </main>
   </body>
 </html>

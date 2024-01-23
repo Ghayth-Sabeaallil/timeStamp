@@ -1,7 +1,7 @@
 @import "../abstracts/color";
 @import "../abstracts/fonts";
 
-.analog-header {
+.header {
     margin: 1em 1em 1em 1em;
     display: flex;
 
@@ -19,6 +19,9 @@
         letter-spacing: 2px;
     }
 }
+.main{
+    display: block; 
+}
 
 .analog-main {
     display: flex;
@@ -35,7 +38,7 @@
             position: absolute;
             padding-bottom: 7.5rem;
             margin-bottom: 10.8rem;
-            animation: secondsMotion 3s infinite linear;        
+            animation: secondsMotion 60s infinite linear;
             animation-play-state: running;
             transform-origin: center;
         }
@@ -58,8 +61,7 @@
         }
     }
 
-
-    .abrot-timer {
+    .abrot-timer-analog {
         display: inline-flex;
         padding: 10px;
         justify-content: center;
@@ -78,6 +80,4 @@
         letter-spacing: 1.6px;
         text-transform: uppercase;
     }
-
-
 }

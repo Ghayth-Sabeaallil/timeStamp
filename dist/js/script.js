@@ -2,7 +2,7 @@
 let sec = document.querySelector(".sec");
 let min = document.querySelector(".min");
 let btn = document.querySelector(".abrot-timer");
-let timerMin = 5;
+let timerMin = 7;
 let iteration = 0;
 let angel = 6;
 function setTimer(timerMin) {
