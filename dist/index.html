@@ -15,15 +15,19 @@
     <main>
       <div class="analog-main">
         <div class="clock">
-          <img class="clock-img" src="../svg/clock.svg" alt="" />
-          <img class="min" src="../svg/minHandle.svg" alt="" />
-          <img class="sec" src="../svg/secHandle.svg" alt="" />
+          <img
+            class="clock-img"
+            src="../svg/clock.svg"
+            alt="clock"
+            onclick="analogPause()"
+          />
+          <img class="min" src="../svg/minHandle.svg" alt="min" />
+          <img class="sec" src="../svg/secHandle.svg" alt="sec" />
         </div>
         <button class="abrot-timer-analog" onclick="abrot()">
           ABORT timer
         </button>
       </div>
-      <button class="abrot-timer-analog" onclick="test()">TEST</button>
     </main>
   </body>
 </html>

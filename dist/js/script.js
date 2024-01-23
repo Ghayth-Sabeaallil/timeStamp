@@ -2,10 +2,11 @@
 let sec = document.querySelector(".sec");
 let min = document.querySelector(".min");
 let btn = document.querySelector(".abrot-timer");
-let timerMin = 3;
+let timerMin = 10;
 let iteration = 0;
 let angel = 6;
 function setTimer(timerMin) {
+    sec.style.animation = `secondsMotion ${3}s infinite linear`;
     sec.style.animationIterationCount = timerMin.toString() + 1;
     sec.addEventListener("animationiteration", () => {
         min.style.transform = `rotate(${angel}deg)`;
@@ -47,8 +48,21 @@ function hideAnalog() {
     let analog = document.querySelector(".analog-main");
     analog.style.display = "none";
 }
+//pause the clock
+function analogPause() {
+    if (sec.style.animationPlayState == "paused") {
+        sec.style.animationPlayState = "running";
+    }
+    else {
+        sec.style.animationPlayState = "paused";
+    }
+}
+//abrot the clock
 function abrot() {
     sec.style.animationPlayState = "paused";
+    sec.style.animation = "";
+    sec.style.transform = "rotate(0deg)";
+    min.style.transform = "rotate(0deg)";
 }
 function test() {
     showAnalog();
