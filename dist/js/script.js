@@ -1,30 +1,22 @@
-class TimerHandler {
-    constructor() {
-      this.addEventListeners();
+var _a;
+class Timer {
+    constructor(name) {
+        this.name = name;
     }
-  
-    addEventListeners() {
-      const timerLinks = document.querySelectorAll('.timer-options a');
-  
-      timerLinks.forEach(link => {
-        link.addEventListener('click', this.handleTimerClick.bind(this));
-      });
+    //display the timer content
+    displayContent() {
+        const content = `<div>${this.name} Timer Content Goes Here</div>`;
+        const timerDisplayContainer = document.getElementById('timer-display-container');
+        if (timerDisplayContainer) {
+            timerDisplayContainer.innerHTML = content;
+        }
     }
-  
-    handleTimerClick(event) {
-      event.preventDefault();
-  
-      const timerId = event.target.id;
-      this.navigateToTimer(timerId);
-    }
-  
-    navigateToTimer(timerId) {
-      console.log(`Navigating to ${timerId}`);
-  
-    }
-  }
-  
-  document.addEventListener('DOMContentLoaded', () => {
-    new TimerHandler();
-  });
-  
+}
+//function for click events
+function handleTimerClick(event) {
+    event.preventDefault();
+    const timerId = event.target.id;
+    const selectedTimer = new Timer(timerId);
+    selectedTimer.displayContent();
+}
+(_a = document.getElementById('analog-timer')) === null || _a === void 0 ? void 0 : _a.addEventListener('click', handleTimerClick);
