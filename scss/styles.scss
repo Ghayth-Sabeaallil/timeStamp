@@ -1,2 +1,24 @@
 @import "./base/base";
 @import url("./components/analog.scss");
+
+body {
+    width: 100vw;
+    min-height: 100vh;
+  }
+  
+  .analog-header {
+    margin: 1em 1em 1em 1em;
+    display: flex;
+  }
+  .analog-header img {
+    padding-right: 8.5rem;
+  }
+  .analog-header p {
+    color: #222222;
+    font-family: "PT Sans";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 2px;
+  }
