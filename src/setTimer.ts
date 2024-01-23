@@ -8,7 +8,6 @@ function increaseTimeFunc() {
     timeInt += 5;
     timeDisplay.textContent = `${timeInt}`;
   }
-  console.log(timeInt);
 }
 
 function decraseTimeFunc() {
@@ -17,23 +16,17 @@ function decraseTimeFunc() {
     timeInt -= 5;
     timeDisplay.textContent = `${timeInt}`;
   }
-  console.log(timeInt);
 }
 
-function starTimer() {
-  console.log("start timer pressed", timeInt);
+document.querySelector(".increase-time").addEventListener("click", increaseTimeFunc);
+document.querySelector(".decrease-time").addEventListener("click", decraseTimeFunc);
+
+document.querySelector(".start-button").addEventListener("click", function () {
   timer.start({ countdown: true, startValues: { minutes: timeInt }, target: { seconds: 0 } });
 
+  //console loggar timern
   timer.addEventListener("secondsUpdated", function () {
     const timeValues = timer.getTimeValues();
     console.log(`Remaining time: ${timeValues.minutes}, ${timeValues.seconds}`);
   });
-}
-
-const increaseTime = document.querySelector(".increase-time");
-const decreaseTime = document.querySelector(".decrease-time");
-const startBtn = document.querySelector(".start-button");
-
-increaseTime.addEventListener("click", increaseTimeFunc);
-decreaseTime.addEventListener("click", decraseTimeFunc);
-startBtn.addEventListener("click", starTimer);
+});
