@@ -10,3 +10,14 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
   },
 };
+
+module.exports = {
+  entry: {
+    script: "./dist/js/script.js",
+    setTimer: "./dist/js/setTimer.js",
+  },
+  output: {
+    filename: "[name].bundle.js",
+    path: path.resolve(__dirname, "dist"),
+  },
+};
