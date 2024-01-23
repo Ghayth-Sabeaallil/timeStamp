@@ -3,7 +3,7 @@ const path = require('path');
 module.exports = {
   entry: {
     easytimer: './node_modules/easytimer.js/dist/easytimer.js',
-    script: './dist/script.js', // Anpassa sökvägen om nödvändigt
+    script: './dist/js/script.js', // Anpassa sökvägen om nödvändigt
   },
   output: {
     filename: '[name].bundle.js',
