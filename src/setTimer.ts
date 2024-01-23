@@ -1,24 +1,27 @@
 import timer from "./script";
 const timeDisplay = document.getElementById("time-number");
-let timeInt;
+let timeInt = parseInt(timeDisplay.textContent);
+
 function increaseTimeFunc() {
   timeInt = parseInt(timeDisplay.textContent);
-  if (timeInt! < 60) {
+  if (timeInt < 60) {
     timeInt += 5;
     timeDisplay.textContent = `${timeInt}`;
   }
+  console.log(timeInt);
 }
 
 function decraseTimeFunc() {
-  let timeInt = parseInt(timeDisplay.textContent);
+  timeInt = parseInt(timeDisplay.textContent);
   if (timeInt > 5) {
     timeInt -= 5;
     timeDisplay.textContent = `${timeInt}`;
   }
+  console.log(timeInt);
 }
 
 function starTimer() {
-  console.log("start timer pressed");
+  console.log("start timer pressed", timeInt);
   timer.start({ countdown: true, startValues: { minutes: timeInt }, target: { seconds: 0 } });
 
   timer.addEventListener("secondsUpdated", function () {
