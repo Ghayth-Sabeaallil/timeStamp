@@ -17,3 +17,5 @@ export function stopTimer(){
 export function resetTimer(){
     timer.reset();
 }
+
+export default timer;

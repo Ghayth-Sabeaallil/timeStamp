@@ -17,3 +17,4 @@ function resetTimer() {
     timer.reset();
 }
 exports.resetTimer = resetTimer;
+exports.default = timer;

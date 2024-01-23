@@ -1,4 +1,5 @@
 import { stopTimer,resetTimer } from "./script";
+import timer from "./script";
 
 const buttonSetNewTimer: HTMLButtonElement | null = document.getElementById("setNewTimer") as HTMLButtonElement | null;
 
@@ -11,3 +12,5 @@ function newTimer(){
 }
 
 addEventListners();
+
+timer.start();
