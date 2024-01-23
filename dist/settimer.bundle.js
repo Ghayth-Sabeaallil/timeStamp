@@ -1,0 +1,1 @@
+(()=>{"use strict";(()=>{document.getElementById("time-number");const e=document.getElementById("hej");document.querySelector(".decrease-time"),console.log(e)})()})();
