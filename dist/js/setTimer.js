@@ -1,3 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const timeDisplay = document.getElementById("time-number");
 function increaseTimeFunc() {
     let timeInt = parseInt(timeDisplay.textContent);

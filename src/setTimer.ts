@@ -1,4 +1,5 @@
 const timeDisplay = document.getElementById("time-number");
+import Timer from "easytimer.js";
 
 function increaseTimeFunc() {
   let timeInt = parseInt(timeDisplay.textContent);
