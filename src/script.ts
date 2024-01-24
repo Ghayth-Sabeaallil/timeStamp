@@ -1,3 +1,6 @@
+import Timer from "easytimer.js";
+const timer = new Timer();
+export default timer;
 //variables
 let sec = document.querySelector(".sec") as HTMLElement;
 let min = document.querySelector(".min") as HTMLElement;
