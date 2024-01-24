@@ -8,6 +8,32 @@
     
   </head>
   <body>
+    <header class="analog-header">
+      <img src="../svg/navicon.svg" alt="" />
+      <p>interval</p>
+    </header>
+    <article class="set-timer-vy">
+      <div class="set-time">
+        <img src="../svg/decrement.svg" alt="decrease-timer-arrow" id="decrese" class="decrease-time" />
+        <div class="set-time-number">
+          <h1 id="time-number">10</h1>
+          <h3>minutes</h3>
+        </div>
+        <img src="../svg/increment.svg" alt="increase-timer-arrow" class="increase-time" />
+      </div>
+      <ul>
+        <li>
+          <input type="checkbox" id="intervals" class="checkbox" />
+          <p>intervals</p>
+        </li>
+        <li>
+          <input type="checkbox" id="5min-break" class="checkbox" />
+          <p>5 min break / interval</p>
+        </li>
+      </ul>
+      <div class="start-button">
+        <h1>START TIMER</h1>
+      </div>
   
     <article class ="alarm-view">
 
@@ -42,5 +68,8 @@
     <script src="./break.bundle.js"></script>
     <script src="./script.bundle.js""></script>
 
+    <script src="./easytimer.bundle.js"></script>
+    <script src="./setTimer.bundle.js"></script>
+    <script src="./script.bundle.js"></script>
   </body>
 </html>

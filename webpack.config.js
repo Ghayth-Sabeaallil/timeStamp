@@ -6,6 +6,7 @@ module.exports = {
     script: './dist/js/script.js', 
     alarm: './dist/js/alarm.js',
     break: './dist/js/break.js',
+    setTimer: './dist/js/setTimer.js',
 
   },
   output: {
