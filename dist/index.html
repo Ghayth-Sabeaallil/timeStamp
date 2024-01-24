@@ -4,28 +4,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Time Stamp</title>
-    <link rel="stylesheet" href="../dist/css/style.css"/>
+    <link rel="stylesheet" href="./css/style.css"/>
     
   </head>
   <body>
 
 
-    <article class ="alarm-view">
+    <article class ="break-view">
 
-      <section class="alarm">
-        <img src="../svg/alarm icon.svg" alt="Pause Icon">
-        <h2>Times up!</h2>
+      <section class="timer">
+        <img src="../svg/pause.svg" alt="Pause Icon">
+        <h2>Pause & breath</h2>
+        <h3 id="time">3.37</h3>
       </section>
 
       <section class="button">
-        <button id="setNewTimer">Set new timer</button>
+        <button id="noPause">no pause, go now!</button>
       </section>
 
     </article>
 
     
-
-    <script src="../dist/easytimer.bundle.js"></script>
-    <script src="../dist/script.bundle.js"></script>
+    <script src="./easytimer.bundle.js"></script>
+    <script src="./break.bundle.js"></script>
+    <script src="./script.bundle.js""></script>
   </body>
 </html>
