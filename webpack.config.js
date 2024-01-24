@@ -5,6 +5,7 @@ module.exports = {
     easytimer: './node_modules/easytimer.js/dist/easytimer.js',
     script: './dist/js/script.js', 
     alarm: './dist/js/alarm.js',
+    break: './dist/js/break.js',
 
   },
   output: {
