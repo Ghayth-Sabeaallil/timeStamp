@@ -19,10 +19,13 @@
         letter-spacing: 2px;
     }
 }
+main{
+    display:contents;
+}
 
 
 .analog-main {
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     flex-direction: column;

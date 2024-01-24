@@ -56,9 +56,20 @@ function showAnalog() {
   analog.style.display = "flex";
 }
 
+//show the Analog
+function showSetTimer() {
+  let analog = document.querySelector(".set-timer-vy") as HTMLElement;
+  analog.style.display = "flex";
+}
+
 //hide the Analog
 function hideAnalog() {
   let analog = document.querySelector(".analog-main") as HTMLElement;
+  analog.style.display = "none";
+}
+//hide the Analog
+function hideSetTimer() {
+  let analog = document.querySelector(".set-timer-vy") as HTMLElement;
   analog.style.display = "none";
 }
 
@@ -78,7 +89,4 @@ function abrot() {
   min.style.transform = "rotate(0deg)";
 }
 
-function test() {
-  showAnalog();
-}
 setTimer(timerMin);
