@@ -11,6 +11,9 @@ body{
     }
     color: $alarm-background-color;
     .set-timer-vy{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         align-self: center;
         font-family: $font-pt-family;
         width: auto;

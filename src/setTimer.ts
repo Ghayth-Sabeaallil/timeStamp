@@ -18,11 +18,19 @@ function decraseTimeFunc() {
   }
 }
 
-document.querySelector(".increase-time").addEventListener("click", increaseTimeFunc);
-document.querySelector(".decrease-time").addEventListener("click", decraseTimeFunc);
+document
+  .querySelector(".increase-time")
+  .addEventListener("click", increaseTimeFunc);
+document
+  .querySelector(".decrease-time")
+  .addEventListener("click", decraseTimeFunc);
 
 document.querySelector(".start-button").addEventListener("click", function () {
-  timer.start({ countdown: true, startValues: { minutes: timeInt }, target: { seconds: 0 } });
+  timer.start({
+    countdown: true,
+    startValues: { minutes: timeInt },
+    target: { seconds: 0 },
+  });
 
   //console loggar timern
   timer.addEventListener("secondsUpdated", function () {

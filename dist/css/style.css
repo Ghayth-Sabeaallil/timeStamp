@@ -2,6 +2,8 @@
 @import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Righteous&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Righteous&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Righteous&display=swap");
 *,
 *::after,
 *::before {
@@ -99,6 +101,9 @@ body header {
   padding-top: 1rem;
 }
 body .set-timer-vy {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   align-self: center;
   font-family: "PT sans", sans-serif;
   width: auto;
@@ -168,6 +173,28 @@ body .set-timer-vy .start-button {
   font-weight: 400;
   line-height: normal;
   letter-spacing: 2px;
+}
+
+.timer-options {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  height: 100vh;
+}
+.timer-options ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+}
+.timer-options li {
+  list-style-type: none;
+  font-size: 24px;
+  font-family: "PT sans", sans-serif;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #222222;
 }
 
 /*# sourceMappingURL=style.css.map */

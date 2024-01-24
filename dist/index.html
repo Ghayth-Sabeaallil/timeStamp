@@ -13,10 +13,21 @@
   </head>
   <body>
     <header class="header">
-      <img src="../svg/navicon.svg" alt="" />
-      <p>interval</p>
+      <img onclick="showMenu()" src="../svg/navicon.svg" alt="" />
     </header>
     <main>
+      <div class="timer-options">
+        <ul>
+          <li onclick="showSetTimer()">Home</li>
+          <li onclick="showAnalog()">analog timer</li>
+          <li>digital timer</li>
+          <li>visual timer</li>
+          <li>text timer</li>
+          <li>circles timer</li>
+        </ul>
+      </div>
+
+      <div id="timer-display-container"></div>
       <div class="analog-main">
         <div class="clock">
           <img
