@@ -3,16 +3,17 @@
 @import "./components/buttons";
 
 body {
-    width: 100vw;
-    min-height: 100vh;
+    height: 100vh;
   }
   
-  .header {
+  .analog-header {
     margin: 1em 1em 1em 1em;
     display: flex;
   }
+
   .analog-header img {
     padding-right: 8.5rem;
+    
   }
   .analog-header p {
     color: #222222;
