@@ -1,26 +1,6 @@
 @import "./base/base";
-@import "./components/alarmview";
+/* @import "./components/alarmview"; */
 @import "./components/buttons";
+@import "./components/digitalview";
 
-body {
-    height: 100vh;
-  }
-  
-  .analog-header {
-    margin: 1em 1em 1em 1em;
-    display: flex;
-  }
-
-  .analog-header img {
-    padding-right: 8.5rem;
-    
-  }
-  .analog-header p {
-    color: #222222;
-    font-family: "PT Sans";
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    letter-spacing: 2px;
-  }
+   

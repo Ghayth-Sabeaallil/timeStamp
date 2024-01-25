@@ -1,7 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Righteous&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Righteous&display=swap");
 *,
 *::after,
 *::before {
@@ -14,4 +12,52 @@ body {
   height: 100vh;
 }
 
+/* @import "./components/alarmview"; */
+button {
+  background-color: transparent;
+  color: #999999;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 1rem;
+  border: 1px solid #999999;
+  border-radius: 5px;
+}
+button:active {
+  background-color: #FFFFFF;
+}
 
+.analog-header {
+  margin: 1em 1em 1em 1em;
+  display: flex;
+}
+.analog-header img {
+  padding-right: 7rem;
+}
+.analog-header p {
+  color: #222222;
+  font-family: "PT Sans";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 2px;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 85vh;
+  margin-top: 7.5rem;
+  gap: 8rem;
+}
+main #basicUsage {
+  font-size: 5em;
+}
+main .resetBtn {
+  margin-top: 4rem;
+}
+
+/*# sourceMappingURL=style.css.map */

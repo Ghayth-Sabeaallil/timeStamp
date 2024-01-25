@@ -6,7 +6,7 @@ const resetBtn = document.querySelector('.resetBtn') as HTMLButtonElement; */
 timer.start({
     countdown: false,
     startValues: { minutes: 0, seconds: 0 },
-    target: { minutes: 10, seconds: 0 }
+    target: { minutes: 60, seconds: 0 }
 });
 
 timer.addEventListener('secondsUpdated', function () {
