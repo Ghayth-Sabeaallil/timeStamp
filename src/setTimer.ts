@@ -1,6 +1,6 @@
-import timer from "./script";
-import { showAnalog } from "./script";
-import { showSetTimer } from "./script";
+import Timer, { showAnalog } from "./script";
+import { showSetTimer, showAlarm } from "./script";
+const timer = new Timer();
 
 const timeDisplay = document.getElementById("time-number");
 let timeInt = parseInt(timeDisplay.textContent);
@@ -28,24 +28,29 @@ document
   .querySelector(".decrease-time")
   .addEventListener("click", decraseTimeFunc);
 
-document.querySelector(".start-button").addEventListener("click", ghayth);
+document.querySelector(".start-button").addEventListener("click", setNewTimer);
 
-function ghayth(): void {
+function setNewTimer(): void {
   timer.start({
     countdown: true,
-    startValues: { minutes: timeInt },
+    startValues: { minutes: 1 },
     target: { seconds: 0 },
   });
 
   showAnalog();
   timer.addEventListener("secondsUpdated", function () {
     const timeValues = timer.getTimeValues();
-    console.log(`Remaining time: ${timeValues.minutes}, ${timeValues.seconds}`);
     document.querySelector(
       ".digital"
     ).innerHTML = `${timeValues.minutes}:${timeValues.seconds}`;
-
+    document.querySelector(
+      "#time"
+    ).innerHTML = `${timeValues.minutes}:${timeValues.seconds}`;
     setTimer(timeValues.seconds);
+  });
+
+  timer.addEventListener("targetAchieved", function (e) {
+    showAlarm();
   });
 }
 
@@ -66,11 +71,20 @@ function setTimer(secHandle: number) {
 }
 document.querySelector("#analogBtn").addEventListener("click", abrot);
 document.querySelector("#digitalBtn").addEventListener("click", abrot);
+document.querySelector("#setNewTimer").addEventListener("click", abrot);
+document.querySelector(".pauseBtn").addEventListener("click", pause);
 
 //abrot the clock
 function abrot(): void {
   timer.stop();
+  sec.style.transform = `rotate(0deg)`;
+  min.style.transform = `rotate(0deg)`;
+  secAngel = 6;
   showSetTimer();
+}
+
+function pause() {
+  timer.pause();
 }
 
 /** function calAngle(): number {

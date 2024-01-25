@@ -1,0 +1,58 @@
+@import "../abstracts/color";
+@import "../abstracts/fonts";
+@import "../mixin/mixin";
+
+.break-view {
+    @include circleGradiant;
+    height: 100vh;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: $font-pt-family;
+    color: $font-color-secondary;
+
+    .timer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: auto;
+        gap: 2rem;
+
+        h2 {
+            font-size: 2.25rem;
+            letter-spacing: 0.25rem;
+            font-weight: bold;
+
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: $font-color-secondary-darker;
+            font-weight: normal;
+        }
+    }
+
+    .button {
+
+        align-self: center;
+        margin-bottom: 3rem;
+
+    }
+
+}
+
+button {
+    background-color: transparent;
+    color: $font-color-secondary-darker;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 1rem;
+    border: 1px solid $font-color-secondary-darker;
+    border-radius: 5px;
+
+    &:active {
+        background-color: $font-color-secondary;
+    }
+
+}

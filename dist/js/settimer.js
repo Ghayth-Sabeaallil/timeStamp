@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const script_1 = require("./script");
 const script_2 = require("./script");
-const script_3 = require("./script");
+const timer = new script_1.default();
 const timeDisplay = document.getElementById("time-number");
 let timeInt = parseInt(timeDisplay.textContent);
 function increaseTimeFunc() {
@@ -25,19 +25,22 @@ document
 document
     .querySelector(".decrease-time")
     .addEventListener("click", decraseTimeFunc);
-document.querySelector(".start-button").addEventListener("click", ghayth);
-function ghayth() {
-    script_1.default.start({
+document.querySelector(".start-button").addEventListener("click", setNewTimer);
+function setNewTimer() {
+    timer.start({
         countdown: true,
-        startValues: { minutes: timeInt },
+        startValues: { minutes: 1 },
         target: { seconds: 0 },
     });
-    (0, script_2.showAnalog)();
-    script_1.default.addEventListener("secondsUpdated", function () {
-        const timeValues = script_1.default.getTimeValues();
-        console.log(`Remaining time: ${timeValues.minutes}, ${timeValues.seconds}`);
+    (0, script_1.showAnalog)();
+    timer.addEventListener("secondsUpdated", function () {
+        const timeValues = timer.getTimeValues();
         document.querySelector(".digital").innerHTML = `${timeValues.minutes}:${timeValues.seconds}`;
+        document.querySelector("#time").innerHTML = `${timeValues.minutes}:${timeValues.seconds}`;
         setTimer(timeValues.seconds);
+    });
+    timer.addEventListener("targetAchieved", function (e) {
+        (0, script_2.showAlarm)();
     });
 }
 //variables
@@ -55,10 +58,18 @@ function setTimer(secHandle) {
 }
 document.querySelector("#analogBtn").addEventListener("click", abrot);
 document.querySelector("#digitalBtn").addEventListener("click", abrot);
+document.querySelector("#setNewTimer").addEventListener("click", abrot);
+document.querySelector(".pauseBtn").addEventListener("click", pause);
 //abrot the clock
 function abrot() {
-    script_1.default.stop();
-    (0, script_3.showSetTimer)();
+    timer.stop();
+    sec.style.transform = `rotate(0deg)`;
+    min.style.transform = `rotate(0deg)`;
+    secAngel = 6;
+    (0, script_2.showSetTimer)();
+}
+function pause() {
+    timer.pause();
 }
 /** function calAngle(): number {
   let st = window.getComputedStyle(sec, null);

@@ -6,6 +6,10 @@
 @import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Righteous&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Righteous&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Righteous&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Righteous&display=swap");
 *,
 *::after,
 *::before {
@@ -20,7 +24,7 @@ body {
 
 .header {
   margin: 1em 1em 1em 1em;
-  display: flex;
+  display: none;
 }
 .header img {
   padding-right: 7.5rem;
@@ -232,6 +236,93 @@ main {
   line-height: normal;
   letter-spacing: 1.6px;
   text-transform: uppercase;
+}
+
+.alarm-view {
+  background-color: #393939;
+  background: radial-gradient(circle farthest-corner at center center, #393939 11%, #313131 20%, #262626 50%, #222222 62%);
+  height: 100vh;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: "PT sans", sans-serif;
+  color: #FFFFFF;
+}
+.alarm-view .alarm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  gap: 2rem;
+}
+.alarm-view .alarm h2 {
+  font-size: 2.25rem;
+  letter-spacing: 0.25rem;
+  font-weight: bold;
+}
+.alarm-view .button {
+  align-self: center;
+  margin-bottom: 3rem;
+}
+
+button {
+  background-color: transparent;
+  color: #999999;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 1rem;
+  border: 1px solid #999999;
+  border-radius: 5px;
+}
+button:active {
+  background-color: #FFFFFF;
+}
+
+.break-view {
+  background-color: #393939;
+  background: radial-gradient(circle farthest-corner at center center, #393939 11%, #313131 20%, #262626 50%, #222222 62%);
+  height: 100vh;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: "PT sans", sans-serif;
+  color: #FFFFFF;
+}
+.break-view .timer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  gap: 2rem;
+}
+.break-view .timer h2 {
+  font-size: 2.25rem;
+  letter-spacing: 0.25rem;
+  font-weight: bold;
+}
+.break-view .timer h3 {
+  font-size: 1.5rem;
+  color: #999999;
+  font-weight: normal;
+}
+.break-view .button {
+  align-self: center;
+  margin-bottom: 3rem;
+}
+
+button {
+  background-color: transparent;
+  color: #999999;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 1rem;
+  border: 1px solid #999999;
+  border-radius: 5px;
+}
+button:active {
+  background-color: #FFFFFF;
 }
 
 /*# sourceMappingURL=style.css.map */

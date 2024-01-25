@@ -1,9 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.showSetTimer = exports.showAnalog = void 0;
+exports.showAlarm = exports.showSetTimer = exports.showAnalog = void 0;
 const easytimer_js_1 = require("easytimer.js");
-const timer = new easytimer_js_1.default();
-exports.default = timer;
+exports.default = easytimer_js_1.default;
+document.querySelector(".clock").addEventListener("click", showBreak);
+document.querySelector(".digital-main").addEventListener("click", showBreak);
+document.querySelector("#noPause").addEventListener("click", hideBreak);
 //show the Analog
 function showAnalog() {
     hideMenu();
@@ -13,7 +15,7 @@ function showAnalog() {
     analog.style.display = "flex";
 }
 exports.showAnalog = showAnalog;
-//show the Analog
+//show the Digital
 function showDigital() {
     hideMenu();
     hideSetTimer();
@@ -21,6 +23,38 @@ function showDigital() {
     showHeader();
     let digital = document.querySelector(".digital-main");
     digital.style.display = "flex";
+}
+//show the Alarm
+function showAlarm() {
+    hideMenu();
+    hideSetTimer();
+    hideAnalog();
+    hideHeader();
+    hideDigital();
+    let digital = document.querySelector(".alarm-view");
+    digital.style.display = "flex";
+}
+exports.showAlarm = showAlarm;
+//show the Alarm
+function hideAlarm() {
+    let alarm = document.querySelector(".alarm-view");
+    alarm.style.display = "none";
+}
+//show the Breake
+function hideBreak() {
+    let breake = document.querySelector(".break-view");
+    breake.style.display = "none";
+    showHeader();
+}
+//show the break
+function showBreak() {
+    hideMenu();
+    hideSetTimer();
+    hideAnalog();
+    hideHeader();
+    hideDigital();
+    let breake = document.querySelector(".break-view");
+    breake.style.display = "flex";
 }
 function showHeader() {
     let header = document.querySelector(".header");
@@ -36,6 +70,8 @@ function showSetTimer() {
     hideAnalog();
     hideDigital();
     hideHeader();
+    hideAlarm();
+    hideBreak();
     let setTimer = document.querySelector(".set-timer-vy");
     setTimer.style.display = "flex";
 }

@@ -1,8 +1,12 @@
 import Timer from "easytimer.js";
-const timer = new Timer();
-export default timer;
+export default Timer;
 export { showAnalog };
 export { showSetTimer };
+export { showAlarm };
+
+document.querySelector(".clock").addEventListener("click", showBreak);
+document.querySelector(".digital-main").addEventListener("click", showBreak);
+document.querySelector("#noPause").addEventListener("click", hideBreak);
 
 //show the Analog
 function showAnalog() {
@@ -13,7 +17,7 @@ function showAnalog() {
   analog.style.display = "flex";
 }
 
-//show the Analog
+//show the Digital
 function showDigital() {
   hideMenu();
   hideSetTimer();
@@ -23,6 +27,39 @@ function showDigital() {
   digital.style.display = "flex";
 }
 
+//show the Alarm
+function showAlarm() {
+  hideMenu();
+  hideSetTimer();
+  hideAnalog();
+  hideHeader();
+  hideDigital();
+  let digital = document.querySelector(".alarm-view") as HTMLElement;
+  digital.style.display = "flex";
+}
+//show the Alarm
+function hideAlarm() {
+  let alarm = document.querySelector(".alarm-view") as HTMLElement;
+  alarm.style.display = "none";
+}
+
+//show the Breake
+function hideBreak() {
+  let breake = document.querySelector(".break-view") as HTMLElement;
+  breake.style.display = "none";
+  showHeader();
+}
+
+//show the break
+function showBreak() {
+  hideMenu();
+  hideSetTimer();
+  hideAnalog();
+  hideHeader();
+  hideDigital();
+  let breake = document.querySelector(".break-view") as HTMLElement;
+  breake.style.display = "flex";
+}
 function showHeader() {
   let header = document.querySelector(".header") as HTMLElement;
   header.style.display = "flex";
@@ -39,7 +76,8 @@ function showSetTimer() {
   hideAnalog();
   hideDigital();
   hideHeader();
-
+  hideAlarm();
+  hideBreak();
   let setTimer = document.querySelector(".set-timer-vy") as HTMLElement;
   setTimer.style.display = "flex";
 }
