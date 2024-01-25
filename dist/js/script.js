@@ -3,7 +3,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.hideBreak = exports.showBreak = exports.showAlarm = exports.showSetTimer = exports.showDigital = exports.showAnalog = void 0;
 const easytimer_js_1 = require("easytimer.js");
 const setTimer_1 = require("./setTimer");
-exports.default = easytimer_js_1.default;
+const timer = new easytimer_js_1.default();
+exports.default = timer;
 //show the Analog
 function showAnalog() {
     hideMenu();
@@ -63,7 +64,7 @@ function showBreak(type) {
     hideHeader();
     hideDigital();
     let breake = document.querySelector(".break-view");
-    breake.setAttribute("id", type);
+    breake.id = type;
     breake.style.display = "flex";
 }
 exports.showBreak = showBreak;

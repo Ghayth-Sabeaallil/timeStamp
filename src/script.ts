@@ -1,12 +1,17 @@
 import Timer from "easytimer.js";
 import { noPause } from "./setTimer";
-export default Timer;
+
+
 export { showAnalog };
 export { showDigital };
 export { showSetTimer };
 export { showAlarm };
 export { showBreak };
 export { hideBreak };
+
+
+const timer = new Timer();
+export default timer;
 
 //show the Analog
 function showAnalog() {
@@ -48,6 +53,7 @@ function hideAlarm() {
 //show the Breake
 function hideBreak() {
   let breake = document.querySelector(".break-view") as HTMLElement;
+ 
   breake.style.display = "none";
   if (breake.id == "clock") {
     showAnalog();
@@ -67,7 +73,7 @@ function showBreak(type) {
   hideHeader();
   hideDigital();
   let breake = document.querySelector(".break-view") as HTMLElement;
-  breake.setAttribute("id", type);
+  breake.id=type;
   breake.style.display = "flex";
 }
 function showHeader() {

@@ -1,8 +1,8 @@
-import Timer, { showAnalog, showBreak } from "./script";
+import timer, { showAnalog, showBreak } from "./script";
 import { showSetTimer, showAlarm, hideBreak } from "./script";
 export { noPause };
 
-const timer = new Timer();
+
 
 document.querySelector(".clock").addEventListener("click", pause);
 document.querySelector(".digital-main").addEventListener("click", pause);
@@ -92,7 +92,11 @@ function abrot(): void {
 
 function pause(event) {
   timer.pause();
-  showBreak(event.target.id);
+  if(event.target.id ==="clock"){
+    showBreak(event.target.id);
+  }
+  console.log(event.target);
+  
 }
 function noPause() {
   timer.start();
