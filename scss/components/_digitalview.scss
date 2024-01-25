@@ -1,0 +1,32 @@
+.analog-header {
+    margin: 1em 1em 1em 1em;
+    display: flex;
+     img {
+        padding-right: 7rem;
+      }
+       p {
+        color: #222222;
+        font-family: "PT Sans";
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: 2px;
+      }
+  }
+
+  main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 85vh;
+    margin-top: 7.5rem;
+    gap: 8rem;
+    #basicUsage {
+        font-size: 5em;
+      }
+      .resetBtn {
+        margin-top: 4rem;
+      }
+  }

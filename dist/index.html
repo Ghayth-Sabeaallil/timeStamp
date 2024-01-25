@@ -1,31 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Time Stamp</title>
-    <link rel="stylesheet" href="../dist/css/style.css"/>
-    
-  </head>
-  <body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Time Stamp</title>
+  <link rel="stylesheet" href="./css/style.css" />
+
+</head>
+
+<body>
 
 
-    <article class ="alarm-view">
+  <header>
+    <div class="menu-bar hide">
+      <img src="../svg/navicon.svg" alt="SVG Example" alt="menu bar (white color)">
+    </div>
+  </header>
 
-      <section class="alarm">
-        <img src="../svg/alarm icon.svg" alt="Pause Icon">
-        <h2>Times up!</h2>
-      </section>
 
-      <section class="button">
-        <button id="setNewTimer">Set new timer</button>
-      </section>
+  <div class="timer-options hide">
+    <ul>
+      <li><a href="" id="analog-timer">analog timer</a></li>
+      <li><a href="" id="digital-timer">digital timer</a></li>
+      <li><a href="" id="visual-timer">visual timer</a></li>
+      <li><a href="" id="text-timer">text timer</a></li>
+      <li><a href="" id="circles-timer">circles timer</a></li>
+    </ul>
+  </div>
 
-    </article>
+  <div class="hide" id="timer-display-container">
+     <div  id="basicUsage">00:00</div>
+      <button class="resetBtn">ABORT TIMER</button>
 
-    
+  </div>
 
-    <script src="../dist/easytimer.bundle.js"></script>
-    <script src="../dist/script.bundle.js"></script>
-  </body>
+  <article class="loading-vy">
+    <img src="../svg/icon main.svg" alt="Interval Icon" id="logo" />
+</article>
+
+  <article class="set-timer-vy hide">
+    <div class="set-time">
+      <img src="../svg/decrement.svg" alt="decrease-timer-arrow" id="decrese" class="decrease-time" />
+      <div class="set-time-number">
+        <h1 id="time-number">10</h1>
+        <h3>minutes</h3>
+      </div>
+      <img src="../svg/increment.svg" alt="increase-timer-arrow" class="increase-time" />
+    </div>
+    <ul>
+      <li>
+        <input type="checkbox" id="intervals" class="checkbox" />
+        <p>intervals</p>
+      </li>
+      <li>
+        <input type="checkbox" id="5min-break" class="checkbox" />
+        <p>5 min break / interval</p>
+      </li>
+    </ul>
+    <div class="start-button">
+      <h1>START TIMER</h1>
+    </div>
+  </article>
+
+
+
+  <article class="alarm-view hide">
+
+    <section class="alarm">
+      <img src="../svg/alarm icon.svg" alt="Pause Icon">
+      <h2>Times up!</h2>
+    </section>
+
+    <section class="button">
+      <button id="setNewTimer">Set new timer</button>
+    </section>
+
+  </article>
+
+  <article class="break-view hide">
+
+    <section class="timer">
+      <img src="../svg/pause.svg" alt="Pause Icon">
+      <h2>Pause & breath</h2>
+      <h3 id="time">3.37</h3>
+    </section>
+
+    <section class="button">
+      <button id="noPause">no pause, go now!</button>
+    </section>
+
+  </article>
+
+  <div class="analog-main hide" id="analogClock">
+    <div class="clock">
+      <img class="clock-img" src="../svg/clock.svg" alt="clock""/>
+      <img class="min" src="../svg/minHandle.svg" alt="min" />
+      <img class="sec" src="../svg/secHandle.svg" alt="sec" />
+    </div>
+    <button class="abrot-timer-analog" onclick="abrot()">
+      ABORT timer
+    </button>
+  </div>
+
+  <article class ="hourglass-view hide">
+      
+    <div class="hourglass">
+      
+    </div>
+
+   <section class="button">
+      <button id="pauseTimer">Abort Timer</button>
+    </section> 
+  </article>
+
+  <script src="./easytimer.bundle.js"></script>
+  <script src="./alarm.bundle.js"></script>
+  <script src="./break.bundle.js"></script>
+  <script src="setTimer.bundle.js"></script>
+  <script src="./digtalTimer.bundle.js"></script>
+  <script src="./home.bundle.js"></script>
+  <script src="./switchScene.bundle.js"></script>
+  <script src="./loading.bundle.js"></script>
+  <script src="analogTimer.bundle.js"></script>
+  <script src="./script.bundle.js"></script>
+</body>
+
 </html>

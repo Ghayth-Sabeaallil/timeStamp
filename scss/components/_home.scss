@@ -1,0 +1,37 @@
+
+.menu-bar {
+    color: #222222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+  
+  .menu-bar img {
+    margin-right: auto;
+  }
+}
+  .timer-options {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+  
+  .timer-options ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+  }
+  .timer-options li {
+    list-style-type: none;
+  }
+  .timer-options li a {
+    font-size: 24px;
+    font-family: "PT sans", sans-serif;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #222222;
+  }
+
+}

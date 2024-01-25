@@ -1,0 +1,45 @@
+@import "../abstracts/color";
+@import "../abstracts/fonts";
+@import "../mixin/mixin";
+
+
+body{
+    margin: 0;
+    overflow: hidden;
+    background-color: $color-circle-radiant-fourth; /* Definiera variabeln eller använd en fast färg */
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.hourglass-view{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+   
+    .hourglass {
+        width: 100%; /* Ändra bredden till 100% för att täcka hela sidan */
+        height: 100vh; /* Använd hela sidans höjd */
+        background-color: $color-circle-radiant-fourth; /* Bakgrundsfärg för rektangeln */
+        animation: hourglassAnimation 5s linear forwards;
+      }
+
+      @keyframes hourglassAnimation {
+        100% {
+          border-bottom: 0 solid white;
+        }
+
+        0% {
+          border-bottom: 100vh solid white;
+        }
+      }
+
+    .button{
+       position: absolute;
+       bottom: 0;
+        margin-bottom: 3rem;
+        
+    } 
+    
+}
