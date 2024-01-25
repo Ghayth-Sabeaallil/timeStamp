@@ -1,0 +1,45 @@
+@import "../abstracts/color";
+@import "../abstracts/fonts";
+@import "../mixin/mixin";
+
+
+body{
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column; 
+}
+
+.hourglass-view{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+   
+    .hourglass {
+        width: 100%; 
+        height: 100vh; 
+        background-color: $color-circle-radiant-fourth; 
+        animation: hourglassAnimation 5s linear forwards;
+      }
+
+      @keyframes hourglassAnimation {
+        100% {
+          border-bottom: 0 solid white;
+        }
+
+        0% {
+          border-bottom: 100vh solid white;
+        }
+      }
+
+    .button{
+       position: absolute;
+       bottom: 0;
+        margin-bottom: 3rem;
+        
+    } 
+
+    
+    
+}

@@ -6,7 +6,24 @@ document.querySelector(".clock")!.addEventListener("click", pause);
 document.querySelector(".digital-main")!.addEventListener("click", pause);
 document.getElementById("noPauseButton")!.addEventListener("click", hideBreak);
 console.log(document.getElementById("noPauseButton"));
-const timeDisplay : HTMLElement | null  = document.getElementById("time-number");
+const timeDisplay: HTMLElement | null = document.getElementById("time-number");
+
+
+
+// view buttons from menu
+const showDigitalButton : HTMLElement |null = document.getElementById("digtalTimerView");
+
+showDigitalButton.addEventListener("click", showDigital);
+
+const showAnalogButton : HTMLElement | null = document.getElementById("analogTimerView");
+showAnalogButton.addEventListener("click", showAnalog);
+
+
+const showVisualTimer : HTMLElement | null = document.getElementById("visualTimerView");
+showVisualTimer.addEventListener("click", showVisual);
+
+const pauseFromVisualButton : HTMLElement |null = document.querySelector(".hourglass-view");
+pauseFromVisualButton.addEventListener("click",pause);
 
 
 let timeInt;
@@ -27,8 +44,6 @@ function decraseTimeFunc() {
   }
 }
 
-
-
 document.querySelector(".increase-time")!.addEventListener("click", increaseTimeFunc);
 document.querySelector(".decrease-time")!.addEventListener("click", decraseTimeFunc);
 
@@ -38,7 +53,7 @@ function setNewTimer(): void {
   timer.removeAllEventListeners();
   timer.start({
     countdown: true,
-    startValues: { minutes: timeInt },
+    startValues: { seconds: 10 },
     target: { seconds: 0 },
   });
 
@@ -53,6 +68,8 @@ function setNewTimer(): void {
   timer.addEventListener("targetAchieved", function (e) {
     showAlarm();
   });
+
+  startHourglassTimer();
 }
 
 //variables
@@ -74,7 +91,7 @@ document.querySelector("#analogBtn")!.addEventListener("click", abrot);
 document.querySelector("#digitalBtn")!.addEventListener("click", abrot);
 document.querySelector("#setNewTimer")!.addEventListener("click", abrot);
 document.querySelector(".pauseBtn")!.addEventListener("click", pause);
-
+document.getElementById("pauseTimer")!.addEventListener("click", abrot);
 //abrot the clock
 function abrot(): void {
   timer.stop();
@@ -86,22 +103,18 @@ function abrot(): void {
 
 function pause(event) {
   timer.pause();
-  console.log("ID när jag pausar:" +event.target.id);
-  if(event.target.id ==="clock"){
+  console.log("ID när jag pausar:" + event.target.id);
+  if (event.target.id === "clock" || event.target.id === "basicUsage" || event.target.id ==="hourGlass") {
     showBreak(event.target.id);
   }
-  
-  
+  document.getElementById("hourGlass").parentElement.style.animationPlayState = "paused";
+
 }
 function noPause() {
   timer.start();
 }
 
-
-
-
-
-const showMenuButton : HTMLButtonElement | null = document.getElementById("showMenuButton") as HTMLButtonElement | null;
+const showMenuButton: HTMLButtonElement | null = document.getElementById("showMenuButton") as HTMLButtonElement | null;
 showMenuButton.addEventListener("click", showMenu);
 
 //show the Analog
@@ -109,11 +122,21 @@ function showAnalog() {
   hideMenu();
   hideSetTimer();
   showHeader();
+  hideDigital();
+  hideHourglass();
   let analog = document.querySelector(".analog-main") as HTMLElement;
   analog.style.display = "flex";
 }
 //show the Analog
-function showVisual() {}
+function showVisual() {
+  hideMenu();
+  hideSetTimer();
+  hideAnalog();
+  showHeader();
+  hideDigital();
+  let visual: HTMLElement | null = document.querySelector(".hourglass-view")
+  visual.style.display ="flex";
+ }
 
 //show the Digital
 function showDigital() {
@@ -121,6 +144,7 @@ function showDigital() {
   hideSetTimer();
   hideAnalog();
   showHeader();
+  hideHourglass();
   let digital = document.querySelector(".digital-main") as HTMLElement;
   digital.style.display = "flex";
 }
@@ -145,20 +169,34 @@ function hideAlarm() {
 function hideBreak() {
   console.log("hide break");
   let breake = document.querySelector(".break-view") as HTMLElement;
-  
+  console.log("Startar animation");
+ 
+
   breake.style.display = "none";
   console.log(breake);
-  if (breake.id == "clock") {
+  if (breake.id === "clock") {
     console.log("Ska visa analog");
     showAnalog();
     noPause();
   }
-  if (breake.id == "basicUsage") {
+  if (breake.id === "basicUsage") {
     showDigital();
     noPause();
   }
+
+  if(breake.id === "hourGlass")
+  {
+    showVisual();
+    noPause();
+    
+  }
 }
 
+
+function hideHourglass() {
+  const hourglassEl: HTMLElement | null = document.querySelector(".hourglass-view");
+  hourglassEl.style.display = "none";
+}
 //show the break
 function showBreak(type) {
   hideMenu();
@@ -166,8 +204,9 @@ function showBreak(type) {
   hideAnalog();
   hideHeader();
   hideDigital();
+  hideHourglass();
   let breake = document.querySelector(".break-view") as HTMLElement;
-  breake.id=type;
+  breake.id = type;
   breake.style.display = "flex";
 }
 function showHeader() {
@@ -188,6 +227,7 @@ function showSetTimer() {
   hideHeader();
   hideAlarm();
   hideBreak();
+  hideHourglass();
   let setTimer = document.querySelector(".set-timer-vy") as HTMLElement;
   setTimer.style.display = "flex";
 }
@@ -214,6 +254,7 @@ function hideAnalog() {
 
 //hide the Analog
 function hideDigital() {
+  
   let digital = document.querySelector(".digital-main") as HTMLElement;
   digital.style.display = "none";
 }
@@ -235,8 +276,54 @@ hideSetTimer();
 
 
 
+// Hourglass
+
+const hourglass: HTMLElement | null = document.querySelector('.hourglass');
+const pauseButton: HTMLButtonElement | null = document.getElementById("pauseTimer") as HTMLButtonElement | null;
+let timerDuration;
 
 
+function updateHourglassColor(progress: number) {
+  const invertedProgress = 100 - progress;
+  hourglass!.style.borderBottom = `${invertedProgress}px solid white`;
+}
+
+
+function onTimerUpdate() {
+  const timeValues = timer.getTimeValues();
+
+  const progress = (timeValues.minutes * 60 + timeValues.seconds) / (timerDuration / 1000) * 100;
+  console.log(progress);
+  updateHourglassColor(progress);
+}
+
+function startHourglassTimer() {
+  timerDuration = (timer.getTimeValues().minutes * 60 + timer.getTimeValues().seconds) * 1000;
+  const animationDurationInSeconds = timerDuration / 1000;
+  const hourglassElement: HTMLElement | null = document.querySelector('.hourglass');
+  if (hourglassElement) {
+    hourglassElement.style.animationDuration = `${animationDurationInSeconds}s`;
+  }
+
+  timer.start({
+    countdown: true,
+    startValues: { seconds: timerDuration / 1000 },
+    target: { seconds: 0 },
+  });
+
+  timer.addEventListener('secondsUpdated', onTimerUpdate);
+  timer.addEventListener('targetAchieved', () => {
+      hideHourglass();
+  });
+}
+
+pauseButton.addEventListener("click", pauseTimer);
+
+function pauseTimer() {
+  //pause da shit
+}
+
+ 
 
 
 
