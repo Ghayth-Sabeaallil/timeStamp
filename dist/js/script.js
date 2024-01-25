@@ -1,11 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.showAlarm = exports.showSetTimer = exports.showAnalog = void 0;
+exports.hideBreak = exports.showBreak = exports.showAlarm = exports.showSetTimer = exports.showDigital = exports.showAnalog = void 0;
 const easytimer_js_1 = require("easytimer.js");
+const setTimer_1 = require("./setTimer");
 exports.default = easytimer_js_1.default;
-document.querySelector(".clock").addEventListener("click", showBreak);
-document.querySelector(".digital-main").addEventListener("click", showBreak);
-document.querySelector("#noPause").addEventListener("click", hideBreak);
 //show the Analog
 function showAnalog() {
     hideMenu();
@@ -15,6 +13,8 @@ function showAnalog() {
     analog.style.display = "flex";
 }
 exports.showAnalog = showAnalog;
+//show the Analog
+function showVisual() { }
 //show the Digital
 function showDigital() {
     hideMenu();
@@ -24,6 +24,7 @@ function showDigital() {
     let digital = document.querySelector(".digital-main");
     digital.style.display = "flex";
 }
+exports.showDigital = showDigital;
 //show the Alarm
 function showAlarm() {
     hideMenu();
@@ -44,18 +45,28 @@ function hideAlarm() {
 function hideBreak() {
     let breake = document.querySelector(".break-view");
     breake.style.display = "none";
-    showHeader();
+    if (breake.id == "clock") {
+        showAnalog();
+        (0, setTimer_1.noPause)();
+    }
+    if (breake.id == "basicUsage") {
+        showDigital();
+        (0, setTimer_1.noPause)();
+    }
 }
+exports.hideBreak = hideBreak;
 //show the break
-function showBreak() {
+function showBreak(type) {
     hideMenu();
     hideSetTimer();
     hideAnalog();
     hideHeader();
     hideDigital();
     let breake = document.querySelector(".break-view");
+    breake.setAttribute("id", type);
     breake.style.display = "flex";
 }
+exports.showBreak = showBreak;
 function showHeader() {
     let header = document.querySelector(".header");
     header.style.display = "flex";

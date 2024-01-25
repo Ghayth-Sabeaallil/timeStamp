@@ -1,6 +1,12 @@
-import Timer, { showAnalog } from "./script";
-import { showSetTimer, showAlarm } from "./script";
+import Timer, { showAnalog, showBreak } from "./script";
+import { showSetTimer, showAlarm, hideBreak } from "./script";
+export { noPause };
+
 const timer = new Timer();
+
+document.querySelector(".clock").addEventListener("click", pause);
+document.querySelector(".digital-main").addEventListener("click", pause);
+document.querySelector("#noPause").addEventListener("click", hideBreak);
 
 const timeDisplay = document.getElementById("time-number");
 let timeInt = parseInt(timeDisplay.textContent);
@@ -31,9 +37,10 @@ document
 document.querySelector(".start-button").addEventListener("click", setNewTimer);
 
 function setNewTimer(): void {
+  timer.removeAllEventListeners();
   timer.start({
     countdown: true,
-    startValues: { minutes: 1 },
+    startValues: { minutes: timeInt },
     target: { seconds: 0 },
   });
 
@@ -83,10 +90,13 @@ function abrot(): void {
   showSetTimer();
 }
 
-function pause() {
+function pause(event) {
   timer.pause();
+  showBreak(event.target.id);
 }
-
+function noPause() {
+  timer.start();
+}
 /** function calAngle(): number {
   let st = window.getComputedStyle(sec, null);
   let tr =

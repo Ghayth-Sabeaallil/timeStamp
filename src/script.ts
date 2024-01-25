@@ -1,12 +1,12 @@
 import Timer from "easytimer.js";
+import { noPause } from "./setTimer";
 export default Timer;
 export { showAnalog };
+export { showDigital };
 export { showSetTimer };
 export { showAlarm };
-
-document.querySelector(".clock").addEventListener("click", showBreak);
-document.querySelector(".digital-main").addEventListener("click", showBreak);
-document.querySelector("#noPause").addEventListener("click", hideBreak);
+export { showBreak };
+export { hideBreak };
 
 //show the Analog
 function showAnalog() {
@@ -16,6 +16,8 @@ function showAnalog() {
   let analog = document.querySelector(".analog-main") as HTMLElement;
   analog.style.display = "flex";
 }
+//show the Analog
+function showVisual() {}
 
 //show the Digital
 function showDigital() {
@@ -47,17 +49,25 @@ function hideAlarm() {
 function hideBreak() {
   let breake = document.querySelector(".break-view") as HTMLElement;
   breake.style.display = "none";
-  showHeader();
+  if (breake.id == "clock") {
+    showAnalog();
+    noPause();
+  }
+  if (breake.id == "basicUsage") {
+    showDigital();
+    noPause();
+  }
 }
 
 //show the break
-function showBreak() {
+function showBreak(type) {
   hideMenu();
   hideSetTimer();
   hideAnalog();
   hideHeader();
   hideDigital();
   let breake = document.querySelector(".break-view") as HTMLElement;
+  breake.setAttribute("id", type);
   breake.style.display = "flex";
 }
 function showHeader() {

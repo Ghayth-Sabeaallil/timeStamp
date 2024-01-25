@@ -1,8 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.noPause = void 0;
 const script_1 = require("./script");
 const script_2 = require("./script");
 const timer = new script_1.default();
+document.querySelector(".clock").addEventListener("click", pause);
+document.querySelector(".digital-main").addEventListener("click", pause);
+document.querySelector("#noPause").addEventListener("click", script_2.hideBreak);
 const timeDisplay = document.getElementById("time-number");
 let timeInt = parseInt(timeDisplay.textContent);
 function increaseTimeFunc() {
@@ -27,9 +31,10 @@ document
     .addEventListener("click", decraseTimeFunc);
 document.querySelector(".start-button").addEventListener("click", setNewTimer);
 function setNewTimer() {
+    timer.removeAllEventListeners();
     timer.start({
         countdown: true,
-        startValues: { minutes: 1 },
+        startValues: { minutes: timeInt },
         target: { seconds: 0 },
     });
     (0, script_1.showAnalog)();
@@ -68,9 +73,14 @@ function abrot() {
     secAngel = 6;
     (0, script_2.showSetTimer)();
 }
-function pause() {
+function pause(event) {
     timer.pause();
+    (0, script_1.showBreak)(event.target.id);
 }
+function noPause() {
+    timer.start();
+}
+exports.noPause = noPause;
 /** function calAngle(): number {
   let st = window.getComputedStyle(sec, null);
   let tr =
