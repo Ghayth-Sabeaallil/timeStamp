@@ -1,0 +1,41 @@
+.digital-main {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 85vh;
+    margin-top: 7.5rem;
+    gap: 8rem;
+    #basicUsage {
+        font-size: 5em;
+      }
+      .digital{
+        color: #222;
+text-align: center;
+font-family: "PT Sans";
+font-size: 80px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+letter-spacing: 8px; 
+      }
+      .abrot-timer {
+        display: inline-flex;
+        padding: 10px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        border-radius: 5px;
+        border: 1px solid #222;
+        opacity: 0.6;
+        color: $font-color-primary;
+        text-align: center;
+        font-family: "PT Sans";
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: 1.6px;
+        text-transform: uppercase;
+    }
+    }

@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const script_1 = require("./script");
 const script_2 = require("./script");
+const script_3 = require("./script");
 const timeDisplay = document.getElementById("time-number");
 let timeInt = parseInt(timeDisplay.textContent);
 function increaseTimeFunc() {
@@ -35,6 +36,7 @@ function ghayth() {
     script_1.default.addEventListener("secondsUpdated", function () {
         const timeValues = script_1.default.getTimeValues();
         console.log(`Remaining time: ${timeValues.minutes}, ${timeValues.seconds}`);
+        document.querySelector(".digital").innerHTML = `${timeValues.minutes}:${timeValues.seconds}`;
         setTimer(timeValues.seconds);
     });
 }
@@ -51,10 +53,12 @@ function setTimer(secHandle) {
         minAngel = minAngel + 6;
     }
 }
-document.querySelector(".abrot-timer-analog").addEventListener("click", abrot);
+document.querySelector("#analogBtn").addEventListener("click", abrot);
+document.querySelector("#digitalBtn").addEventListener("click", abrot);
 //abrot the clock
 function abrot() {
-    script_1.default.stop;
+    script_1.default.stop();
+    (0, script_3.showSetTimer)();
 }
 /** function calAngle(): number {
   let st = window.getComputedStyle(sec, null);

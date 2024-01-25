@@ -1,5 +1,7 @@
 import timer from "./script";
 import { showAnalog } from "./script";
+import { showSetTimer } from "./script";
+
 const timeDisplay = document.getElementById("time-number");
 let timeInt = parseInt(timeDisplay.textContent);
 
@@ -39,6 +41,10 @@ function ghayth(): void {
   timer.addEventListener("secondsUpdated", function () {
     const timeValues = timer.getTimeValues();
     console.log(`Remaining time: ${timeValues.minutes}, ${timeValues.seconds}`);
+    document.querySelector(
+      ".digital"
+    ).innerHTML = `${timeValues.minutes}:${timeValues.seconds}`;
+
     setTimer(timeValues.seconds);
   });
 }
@@ -58,11 +64,13 @@ function setTimer(secHandle: number) {
     minAngel = minAngel + 6;
   }
 }
-document.querySelector(".abrot-timer-analog").addEventListener("click", abrot);
+document.querySelector("#analogBtn").addEventListener("click", abrot);
+document.querySelector("#digitalBtn").addEventListener("click", abrot);
 
 //abrot the clock
 function abrot(): void {
-  timer.stop;
+  timer.stop();
+  showSetTimer();
 }
 
 /** function calAngle(): number {

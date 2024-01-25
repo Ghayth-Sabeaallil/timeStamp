@@ -25,26 +25,24 @@
       <div class="timer-options">
         <ul>
           <li onclick="showAnalog()">analog timer</li>
-          <li>digital timer</li>
+          <li onclick="showDigital()">digital timer</li>
           <li>visual timer</li>
-          <li>text timer</li>
-          <li>circles timer</li>
         </ul>
       </div>
 
       <!-- Analog -->
       <div class="analog-main">
         <div class="clock">
-          <img
-            class="clock-img"
-            src="../svg/clock.svg"
-            alt="clock"
-            onclick="analogPause()"
-          />
+          <img class="clock-img" src="../svg/clock.svg" alt="clock" />
           <img class="min" src="../svg/minHandle.svg" alt="min" />
           <img class="sec" src="../svg/secHandle.svg" alt="sec" />
         </div>
-        <button class="abrot-timer-analog">ABORT timer</button>
+        <button id="analogBtn" class="abrot-timer">ABORT TIMER</button>
+      </div>
+      <!-- Digital -->
+      <div class="digital-main">
+        <div class="digital" id="basicUsage"></div>
+        <button id="digitalBtn" class="abrot-timer">ABORT TIMER</button>
       </div>
 
       <!-- Set timer -->
