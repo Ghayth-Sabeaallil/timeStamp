@@ -2,9 +2,11 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.hideBreak = exports.showBreak = exports.showAlarm = exports.showSetTimer = exports.showDigital = exports.showAnalog = void 0;
 const easytimer_js_1 = require("easytimer.js");
-const setTimer_1 = require("./setTimer");
+const timerHandler_1 = require("./timerHandler");
 const timer = new easytimer_js_1.default();
 exports.default = timer;
+const showMenuButton = document.getElementById("showMenuButton");
+showMenuButton.addEventListener("click", showMenu);
 //show the Analog
 function showAnalog() {
     hideMenu();
@@ -44,15 +46,18 @@ function hideAlarm() {
 }
 //show the Breake
 function hideBreak() {
+    console.log("hide break");
     let breake = document.querySelector(".break-view");
     breake.style.display = "none";
+    console.log(breake);
     if (breake.id == "clock") {
+        console.log("Ska visa analog");
         showAnalog();
-        (0, setTimer_1.noPause)();
+        (0, timerHandler_1.noPause)();
     }
     if (breake.id == "basicUsage") {
         showDigital();
-        (0, setTimer_1.noPause)();
+        (0, timerHandler_1.noPause)();
     }
 }
 exports.hideBreak = hideBreak;
@@ -90,6 +95,7 @@ function showSetTimer() {
 exports.showSetTimer = showSetTimer;
 //show the Menu
 function showMenu() {
+    console.log("Clickade på meny");
     let menu = document.querySelector(".timer-options");
     if (menu.style.display == "flex") {
         menu.style.display = "none";

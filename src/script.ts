@@ -1,6 +1,5 @@
 import Timer from "easytimer.js";
-import { noPause } from "./setTimer";
-
+import { noPause } from "./timerHandler";
 
 export { showAnalog };
 export { showDigital };
@@ -9,9 +8,11 @@ export { showAlarm };
 export { showBreak };
 export { hideBreak };
 
-
 const timer = new Timer();
 export default timer;
+
+const showMenuButton : HTMLButtonElement | null = document.getElementById("showMenuButton") as HTMLButtonElement | null;
+showMenuButton.addEventListener("click", showMenu);
 
 //show the Analog
 function showAnalog() {
@@ -52,10 +53,13 @@ function hideAlarm() {
 
 //show the Breake
 function hideBreak() {
+  console.log("hide break");
   let breake = document.querySelector(".break-view") as HTMLElement;
- 
+  
   breake.style.display = "none";
+  console.log(breake);
   if (breake.id == "clock") {
+    console.log("Ska visa analog");
     showAnalog();
     noPause();
   }
@@ -99,6 +103,7 @@ function showSetTimer() {
 }
 //show the Menu
 function showMenu() {
+  console.log("Clickade på meny");
   let menu = document.querySelector(".timer-options") as HTMLElement;
   if (menu.style.display == "flex") {
     menu.style.display = "none";
