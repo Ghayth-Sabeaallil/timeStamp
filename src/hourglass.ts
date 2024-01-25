@@ -1,5 +1,7 @@
 import timer from "./script";
 
+export const hoursglassElement : HTMLElement |null = document.getElementById("hoursglass");
+
 const hourglass : HTMLElement | null = document.querySelector('.hourglass');
 const pauseButton : HTMLButtonElement | null = document.getElementById("pauseTimer") as HTMLButtonElement | null;
 let timerDuration;
@@ -15,7 +17,6 @@ function updateHourglassColor(progress: number) {
     const timeValues = timer.getTimeValues();
     
     const progress = (timeValues.minutes * 60 + timeValues.seconds) / (timerDuration / 1000) * 100;
-    console.log(progress);
     updateHourglassColor(progress);
   }
   

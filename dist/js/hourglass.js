@@ -1,6 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.hoursglassElement = void 0;
 const script_1 = require("./script");
+exports.hoursglassElement = document.getElementById("hoursglass");
 const hourglass = document.querySelector('.hourglass');
 const pauseButton = document.getElementById("pauseTimer");
 let timerDuration;
@@ -11,7 +13,6 @@ function updateHourglassColor(progress) {
 function onTimerUpdate() {
     const timeValues = script_1.default.getTimeValues();
     const progress = (timeValues.minutes * 60 + timeValues.seconds) / (timerDuration / 1000) * 100;
-    console.log(progress);
     updateHourglassColor(progress);
 }
 function startHourglassTimer() {

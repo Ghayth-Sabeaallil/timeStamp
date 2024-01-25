@@ -3,6 +3,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.analogTimerElement = void 0;
 const switchScene_1 = require("./switchScene");
 const break_1 = require("./break");
+const setTimer_1 = require("./setTimer");
+const script_1 = require("./script");
 //variables
 let sec = document.querySelector(".sec");
 let min = document.querySelector(".min");
@@ -13,6 +15,8 @@ let angel = 6;
 exports.analogTimerElement = document.querySelector(".analog-main");
 const pauseButton = document.querySelector(".clock");
 pauseButton === null || pauseButton === void 0 ? void 0 : pauseButton.addEventListener("click", analogPause);
+const abortButton = document.querySelector(".abrot-timer-analog");
+abortButton === null || abortButton === void 0 ? void 0 : abortButton.addEventListener("click", abrot);
 function setTimer(timerMin) {
     sec.style.animation = `secondsMotion ${3}s infinite linear`;
     sec.style.animationIterationCount = timerMin.toString() + 1;
@@ -58,6 +62,7 @@ function hideAnalog() {
 }
 //pause the clock
 function analogPause() {
+    script_1.default.pause();
     (0, switchScene_1.switchScene)(exports.analogTimerElement, break_1.breakViewElement);
     if (sec.style.animationPlayState == "paused") {
         sec.style.animationPlayState = "running";
@@ -68,6 +73,8 @@ function analogPause() {
 }
 //abrot the clock
 function abrot() {
+    script_1.default.removeAllEventListeners();
+    (0, switchScene_1.switchScene)(exports.analogTimerElement, setTimer_1.setTimerElement);
     sec.style.animationPlayState = "paused";
     sec.style.animation = "";
     sec.style.transform = "rotate(0deg)";

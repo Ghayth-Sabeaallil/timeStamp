@@ -1,7 +1,10 @@
 import timer from "./script";
 import { analogTimerElement } from "./analogTimer";
-import { switchScene } from "./switchScene";
+import { currentId, switchScene } from "./switchScene";
+import { digitalTimerElement } from "./digitalTimer";
+import { hoursglassElement } from "./hourglass";
 const buttonNoPause: HTMLButtonElement | null = document.getElementById("noPause") as HTMLButtonElement | null;
+
 const timeElement: HTMLElement | null = document.getElementById("time");
 export const breakViewElement :HTMLElement |null = document.querySelector(".break-view");
 function addEventListners() {
@@ -9,7 +12,21 @@ function addEventListners() {
 }
 
 function goBack() {
-    switchScene(breakViewElement!,analogTimerElement!);
+    if(currentId === "analogClock"){
+        switchScene(breakViewElement!,analogTimerElement!);
+        timer.start();
+    }
+
+    else if(currentId === "timer-display-container"){
+        switchScene(breakViewElement!,digitalTimerElement!);
+        timer.start();
+    }
+
+    else if(currentId === "hourglass"){
+        switchScene(breakViewElement!,hoursglassElement!);
+        timer.start();
+    }
+    
 }
 
 function updateTime() {

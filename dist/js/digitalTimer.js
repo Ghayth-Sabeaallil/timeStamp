@@ -1,16 +1,17 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const easytimer_js_1 = require("easytimer.js");
-const timer = new easytimer_js_1.default();
+exports.digitalTimerElement = void 0;
+const script_1 = require("./script");
 /* const basicUsageDiv = document.getElementById('basicUsage') as HTMLDivElement;
 const resetBtn = document.querySelector('.resetBtn') as HTMLButtonElement; */
-timer.start({
+exports.digitalTimerElement = document.getElementById("timer-display-container");
+script_1.default.start({
     countdown: false,
     startValues: { minutes: 0, seconds: 0 },
     target: { minutes: 60, seconds: 0 }
 });
-timer.addEventListener('secondsUpdated', function () {
-    const timeValues = timer.getTimeValues();
+script_1.default.addEventListener('secondsUpdated', function () {
+    const timeValues = script_1.default.getTimeValues();
     const formattedTime = formatTime(timeValues);
     const basicUsageDiv = document.getElementById('basicUsage');
     basicUsageDiv.innerText = formattedTime;

@@ -4,6 +4,8 @@ exports.breakViewElement = void 0;
 const script_1 = require("./script");
 const analogTimer_1 = require("./analogTimer");
 const switchScene_1 = require("./switchScene");
+const digitalTimer_1 = require("./digitalTimer");
+const hourglass_1 = require("./hourglass");
 const buttonNoPause = document.getElementById("noPause");
 const timeElement = document.getElementById("time");
 exports.breakViewElement = document.querySelector(".break-view");
@@ -11,7 +13,18 @@ function addEventListners() {
     buttonNoPause.addEventListener("click", goBack);
 }
 function goBack() {
-    (0, switchScene_1.switchScene)(exports.breakViewElement, analogTimer_1.analogTimerElement);
+    if (switchScene_1.currentId === "analogClock") {
+        (0, switchScene_1.switchScene)(exports.breakViewElement, analogTimer_1.analogTimerElement);
+        script_1.default.start();
+    }
+    else if (switchScene_1.currentId === "timer-display-container") {
+        (0, switchScene_1.switchScene)(exports.breakViewElement, digitalTimer_1.digitalTimerElement);
+        script_1.default.start();
+    }
+    else if (switchScene_1.currentId === "hourglass") {
+        (0, switchScene_1.switchScene)(exports.breakViewElement, hourglass_1.hoursglassElement);
+        script_1.default.start();
+    }
 }
 function updateTime() {
     let minutes = script_1.default.getTimeValues().minutes.toString();

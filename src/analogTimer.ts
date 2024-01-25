@@ -1,5 +1,7 @@
 import { switchScene } from "./switchScene";
 import { breakViewElement } from "./break";
+import { setTimerElement } from "./setTimer";
+import timer from "./script";
 //variables
 let sec = document.querySelector(".sec") as HTMLElement;
 let min = document.querySelector(".min") as HTMLElement;
@@ -12,6 +14,10 @@ let angel: number = 6;
 export const analogTimerElement: HTMLElement | null = document.querySelector(".analog-main");
 const pauseButton : HTMLButtonElement |null = document.querySelector(".clock");
 pauseButton?.addEventListener("click",analogPause);
+const abortButton : HTMLElement | null = document.querySelector(".abrot-timer-analog");
+
+abortButton?.addEventListener("click", abrot);
+
 
 function setTimer(timerMin: number) {
   sec.style.animation = `secondsMotion ${3}s infinite linear`;
@@ -67,6 +73,7 @@ function hideAnalog() {
 
 //pause the clock
 function analogPause() {
+    timer.pause();
     switchScene(analogTimerElement!,breakViewElement!); 
   if (sec.style.animationPlayState == "paused") {
     sec.style.animationPlayState = "running";
@@ -76,6 +83,8 @@ function analogPause() {
 }
 //abrot the clock
 function abrot() {
+    timer.removeAllEventListeners();
+    switchScene(analogTimerElement!,setTimerElement!);
   sec.style.animationPlayState = "paused";
   sec.style.animation = "";
   sec.style.transform = "rotate(0deg)";

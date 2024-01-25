@@ -1,7 +1,10 @@
-import Timer from "easytimer.js";
-const timer = new Timer();
+import timer from "./script"
 /* const basicUsageDiv = document.getElementById('basicUsage') as HTMLDivElement;
 const resetBtn = document.querySelector('.resetBtn') as HTMLButtonElement; */
+
+export const digitalTimerElement : HTMLElement |null = document.getElementById("timer-display-container");
+
+
 
 timer.start({
     countdown: false,
