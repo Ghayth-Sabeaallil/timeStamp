@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Righteous&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
@@ -15,32 +16,36 @@ body {
 }
 
 body {
-  background-color: #393939;
-  background: radial-gradient(circle farthest-corner at center center, #393939 11%, #313131 20%, #262626 50%, #222222 62%);
+  margin: 0;
+  overflow: hidden;
+  background-color: #222222; /* Definiera variabeln eller använd en fast färg */
+  display: flex;
+  flex-direction: column;
 }
 
-.alarm-view {
-  height: 100%;
+.hourglass-view {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  font-family: "PT sans", sans-serif;
-  color: #FFFFFF;
-}
-.alarm-view .alarm {
-  display: flex;
-  flex-direction: column;
   align-items: center;
-  margin: auto;
-  gap: 2rem;
+  justify-content: center;
+  height: 100%;
 }
-.alarm-view .alarm h2 {
-  font-size: 2.25rem;
-  letter-spacing: 0.25rem;
-  font-weight: bold;
+.hourglass-view .hourglass {
+  width: 100%; /* Ändra bredden till 100% för att täcka hela sidan */
+  height: 100vh; /* Använd hela sidans höjd */
+  background-color: #222222; /* Bakgrundsfärg för rektangeln */
+  animation: hourglassAnimation 5s linear forwards;
 }
-.alarm-view .button {
-  align-self: center;
+@keyframes hourglassAnimation {
+  100% {
+    border-bottom: 0 solid white;
+  }
+  0% {
+    border-bottom: 100vh solid white;
+  }
+}
+.hourglass-view .button {
+  position: absolute;
+  bottom: 0;
   margin-bottom: 3rem;
 }
 

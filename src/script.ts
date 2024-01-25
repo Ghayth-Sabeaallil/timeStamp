@@ -7,3 +7,5 @@ timer.addEventListener('secondsUpdated', function () {
     const timeValues = timer.getTimeValues();
     console.log('Remaining seconds:', timeValues.seconds);
 });
+
+export default timer;
