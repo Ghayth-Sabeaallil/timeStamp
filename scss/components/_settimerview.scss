@@ -1,26 +1,19 @@
 @import "../abstracts/color";
 @import "../abstracts/fonts";
 
-body{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    header{
-        padding-left: 1rem;
-        padding-top: 1rem;
-    }
-    color: $alarm-background-color;
     .set-timer-vy{
-        display: flex;
+        display: none;
         flex-direction: column;
         justify-content: space-between;
         align-self: center;
         font-family: $font-pt-family;
-        width: auto;
+        margin: 20rem 2rem 0 2rem;
+
         .set-time{
             display: flex;
+            justify-content: center;
             flex-direction: row;
-            width: 280px;
+            width: auto;
             justify-content: space-between;
             .set-time-number{
                 text-align: center;
@@ -65,20 +58,3 @@ body{
             font-weight: 100;
         }
     }
-}
-.analog-header {
-    margin: 1em 1em 1em 1em;
-    display: flex;
-  }
-  .analog-header img {
-    padding-right: 8.5rem;
-  }
-  .analog-header p {
-    color: #222222;
-    font-family: "PT Sans";
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    letter-spacing: 2px;
-  }

@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="../dist/css/style.css" />
     <script defer src="./js/script.js"></script>
     <script defer src="./js/settimer.js"></script>
-    <script defer src="./js/analog.js"></script>
     <script defer src="./easytimer.bundle.js"></script>
     <script defer src="./script.bundle.js"></script>
     <script defer src="./settimer.bundle.js"></script>
@@ -17,9 +16,14 @@
       <img onclick="showMenu()" src="../svg/navicon.svg" alt="" />
     </header>
     <main>
+      <!-- Loading -->
+      <article class="loading-vy">
+        <img src="../svg/icon main.svg" alt="Interval Icon" id="logo" />
+      </article>
+
+      <!-- Menu -->
       <div class="timer-options">
         <ul>
-          <li onclick="showSetTimer()">Home</li>
           <li onclick="showAnalog()">analog timer</li>
           <li>digital timer</li>
           <li>visual timer</li>
@@ -28,7 +32,7 @@
         </ul>
       </div>
 
-      <div id="timer-display-container"></div>
+      <!-- Analog -->
       <div class="analog-main">
         <div class="clock">
           <img
@@ -40,10 +44,10 @@
           <img class="min" src="../svg/minHandle.svg" alt="min" />
           <img class="sec" src="../svg/secHandle.svg" alt="sec" />
         </div>
-        <button class="abrot-timer-analog" onclick="abrot()">
-          ABORT timer
-        </button>
+        <button class="abrot-timer-analog">ABORT timer</button>
       </div>
+
+      <!-- Set timer -->
       <article class="set-timer-vy">
         <div class="set-time">
           <img

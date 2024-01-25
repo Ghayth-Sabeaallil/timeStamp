@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.showAnalog = void 0;
 const easytimer_js_1 = require("easytimer.js");
 const timer = new easytimer_js_1.default();
 exports.default = timer;
@@ -7,8 +8,17 @@ exports.default = timer;
 function showAnalog() {
     hideMenu();
     hideSetTimer();
+    showHeader();
     let analog = document.querySelector(".analog-main");
     analog.style.display = "flex";
+}
+exports.showAnalog = showAnalog;
+function showHeader() {
+    let header = document.querySelector(".header");
+    let p = document.createElement("p");
+    p.innerHTML = "interval";
+    header.append(p);
+    header.style.display = "flex";
 }
 //show the SetTimer
 function showSetTimer() {
@@ -41,4 +51,13 @@ function hideAnalog() {
 function hideSetTimer() {
     let setTimer = document.querySelector(".set-timer-vy");
     setTimer.style.display = "none";
+    document.querySelector("#logo").addEventListener("click", loading);
 }
+function loading() {
+    let loading = document.querySelector(".loading-vy");
+    let header = document.querySelector(".header");
+    header.style.display = "none";
+    loading.style.display = "none";
+    showSetTimer();
+}
+hideSetTimer();

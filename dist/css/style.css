@@ -4,6 +4,8 @@
 @import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Righteous&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Righteous&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Righteous&display=swap");
 *,
 *::after,
 *::before {
@@ -14,7 +16,6 @@
 
 body {
   width: 100vw;
-  min-height: 100vh;
 }
 
 .header {
@@ -90,48 +91,39 @@ main {
   text-transform: uppercase;
 }
 
-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  color: #222222;
-}
-body header {
-  padding-left: 1rem;
-  padding-top: 1rem;
-}
-body .set-timer-vy {
-  display: flex;
+.set-timer-vy {
+  display: none;
   flex-direction: column;
   justify-content: space-between;
   align-self: center;
   font-family: "PT sans", sans-serif;
-  width: auto;
+  margin: 20rem 2rem 0 2rem;
 }
-body .set-timer-vy .set-time {
+.set-timer-vy .set-time {
   display: flex;
+  justify-content: center;
   flex-direction: row;
-  width: 280px;
+  width: auto;
   justify-content: space-between;
 }
-body .set-timer-vy .set-time .set-time-number {
+.set-timer-vy .set-time .set-time-number {
   text-align: center;
 }
-body .set-timer-vy .set-time .set-time-number h1 {
+.set-timer-vy .set-time .set-time-number h1 {
   font-size: 5rem;
   height: 5.5rem;
 }
-body .set-timer-vy .set-time .set-time-number h3 {
+.set-timer-vy .set-time .set-time-number h3 {
   font-size: 1rem;
   font-weight: 100;
   color: rgba(34, 34, 34, 0.6);
 }
-body .set-timer-vy ul {
+.set-timer-vy ul {
   margin-top: 10rem;
   margin-bottom: 2rem;
   letter-spacing: 0.13rem;
 }
-body .set-timer-vy ul li {
+.set-timer-vy ul li {
   font-size: 1.3rem;
   display: flex;
   gap: 1rem;
@@ -139,11 +131,11 @@ body .set-timer-vy ul li {
   align-items: center;
   margin-top: 1rem;
 }
-body .set-timer-vy ul li .checkbox {
+.set-timer-vy ul li .checkbox {
   height: 1.3rem;
   width: 1.3rem;
 }
-body .set-timer-vy .start-button {
+.set-timer-vy .start-button {
   border: 0.15rem solid black;
   display: flex;
   align-items: center;
@@ -156,27 +148,8 @@ body .set-timer-vy .start-button {
   font-weight: 100;
 }
 
-.analog-header {
-  margin: 1em 1em 1em 1em;
-  display: flex;
-}
-
-.analog-header img {
-  padding-right: 8.5rem;
-}
-
-.analog-header p {
-  color: #222222;
-  font-family: "PT Sans";
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  letter-spacing: 2px;
-}
-
 .timer-options {
-  display: flex;
+  display: none;
   justify-content: center;
   text-align: center;
   height: 100vh;
@@ -195,6 +168,28 @@ body .set-timer-vy .start-button {
   text-decoration: none;
   text-transform: uppercase;
   color: #222222;
+}
+
+.loading-vy {
+  background-color: #000000;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  scale: 1.2;
+}
+.loading-vy #logo {
+  transition: opacity 2500ms ease-in-out;
+  opacity: 1;
+}
+@keyframes pulsate {
+  50% {
+    opacity: 0.5;
+  }
+}
+.loading-vy #logo {
+  animation: pulsate 2500ms infinite;
 }
 
 /*# sourceMappingURL=style.css.map */

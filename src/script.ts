@@ -1,13 +1,23 @@
 import Timer from "easytimer.js";
 const timer = new Timer();
 export default timer;
+export { showAnalog };
 
 //show the Analog
 function showAnalog() {
   hideMenu();
   hideSetTimer();
+  showHeader();
   let analog = document.querySelector(".analog-main") as HTMLElement;
   analog.style.display = "flex";
+}
+
+function showHeader() {
+  let header = document.querySelector(".header") as HTMLElement;
+  let p = document.createElement("p");
+  p.innerHTML = "interval";
+  header.append(p);
+  header.style.display = "flex";
 }
 
 //show the SetTimer
@@ -40,4 +50,14 @@ function hideAnalog() {
 function hideSetTimer() {
   let setTimer = document.querySelector(".set-timer-vy") as HTMLElement;
   setTimer.style.display = "none";
+  document.querySelector("#logo").addEventListener("click", loading);
 }
+
+function loading() {
+  let loading = document.querySelector(".loading-vy") as HTMLElement;
+  let header = document.querySelector(".header") as HTMLElement;
+  header.style.display = "none";
+  loading.style.display = "none";
+  showSetTimer();
+}
+hideSetTimer();
