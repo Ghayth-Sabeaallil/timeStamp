@@ -39,7 +39,7 @@ function setNewTimer() {
     timer.removeAllEventListeners();
     timer.start({
         countdown: true,
-        startValues: { seconds: 10 },
+        startValues: { minutes: timeInt },
         target: { seconds: 0 },
     });
     showAnalog();
