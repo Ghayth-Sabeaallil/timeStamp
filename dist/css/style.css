@@ -1,3 +1,362 @@
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Righteous&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Righteous&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Righteous&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Righteous&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Righteous&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Righteous&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Righteous&display=swap");
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+body {
+  height: 100vh;
+}
+
+.header {
+  margin: 1em 1em 1em 1em;
+  display: none;
+}
+.header img {
+  padding-right: 7.5rem;
+}
+.header p {
+  color: #222222;
+  font-family: "PT Sans";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 2px;
+}
+
+main {
+  display: contents;
+}
+
+.analog-main {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 85vh;
+  gap: 8rem;
+}
+.analog-main .clock {
+  display: contents;
+}
+.analog-main .clock .sec {
+  position: absolute;
+  padding-bottom: 7.5rem;
+  margin-bottom: 10.8rem;
+  animation-play-state: running;
+  transform-origin: center;
+}
+.analog-main .clock .min {
+  position: absolute;
+  padding-bottom: 7.25rem;
+  margin-bottom: 10.8rem;
+  transform-origin: center;
+}
+@keyframes secondsMotion {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.analog-main .abrot-timer {
+  display: inline-flex;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 5px;
+  border: 1px solid #222;
+  opacity: 0.6;
+  color: #222222;
+  text-align: center;
+  font-family: "PT Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+.set-timer-vy {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  align-self: center;
+  font-family: "PT sans", sans-serif;
+  margin: 20rem 2rem 0 2rem;
+}
+.set-timer-vy .set-time {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  width: auto;
+  justify-content: space-between;
+}
+.set-timer-vy .set-time .set-time-number {
+  text-align: center;
+}
+.set-timer-vy .set-time .set-time-number h1 {
+  font-size: 5rem;
+  height: 5.5rem;
+}
+.set-timer-vy .set-time .set-time-number h3 {
+  font-size: 1rem;
+  font-weight: 100;
+  color: rgba(34, 34, 34, 0.6);
+}
+.set-timer-vy ul {
+  margin-top: 10rem;
+  margin-bottom: 2rem;
+  letter-spacing: 0.13rem;
+}
+.set-timer-vy ul li {
+  font-size: 1.3rem;
+  display: flex;
+  gap: 1rem;
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+}
+.set-timer-vy ul li .checkbox {
+  height: 1.3rem;
+  width: 1.3rem;
+}
+.set-timer-vy .start-button {
+  border: 0.15rem solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 6rem;
+  height: 3.6rem;
+  border-radius: 0.6rem;
+  font-size: 1.4rem;
+  letter-spacing: 0.2rem;
+  font-weight: 100;
+}
+
+.timer-options {
+  display: none;
+  justify-content: center;
+  text-align: center;
+  height: 100vh;
+}
+.timer-options ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+}
+.timer-options li {
+  list-style-type: none;
+  font-size: 24px;
+  font-family: "PT sans", sans-serif;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #222222;
+}
+
+.loading-vy {
+  background-color: #000000;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  scale: 1.2;
+}
+.loading-vy #logo {
+  transition: opacity 2500ms ease-in-out;
+  opacity: 1;
+}
+@keyframes pulsate {
+  50% {
+    opacity: 0.5;
+  }
+}
+.loading-vy #logo {
+  animation: pulsate 2500ms infinite;
+}
+
+.digital-main {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 85vh;
+  margin-top: 7.5rem;
+  gap: 8rem;
+}
+.digital-main #basicUsage {
+  font-size: 5em;
+}
+.digital-main .digital {
+  color: #222;
+  text-align: center;
+  font-family: "PT Sans";
+  font-size: 80px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 8px;
+}
+.digital-main .abrot-timer {
+  display: inline-flex;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 5px;
+  border: 1px solid #222;
+  opacity: 0.6;
+  color: #222222;
+  text-align: center;
+  font-family: "PT Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+.alarm-view {
+  background-color: #393939;
+  background: radial-gradient(circle farthest-corner at center center, #393939 11%, #313131 20%, #262626 50%, #222222 62%);
+  height: 100vh;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: "PT sans", sans-serif;
+  color: #FFFFFF;
+}
+.alarm-view .alarm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  gap: 2rem;
+}
+.alarm-view .alarm h2 {
+  font-size: 2.25rem;
+  letter-spacing: 0.25rem;
+  font-weight: bold;
+}
+.alarm-view .button {
+  align-self: center;
+  margin-bottom: 3rem;
+}
+
+button {
+  background-color: transparent;
+  color: #999999;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 1rem;
+  border: 1px solid #999999;
+  border-radius: 5px;
+}
+button:active {
+  background-color: #FFFFFF;
+}
+
+.break-view {
+  background-color: #393939;
+  background: radial-gradient(circle farthest-corner at center center, #393939 11%, #313131 20%, #262626 50%, #222222 62%);
+  height: 100vh;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: "PT sans", sans-serif;
+  color: #FFFFFF;
+}
+.break-view .timer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  gap: 2rem;
+}
+.break-view .timer h2 {
+  font-size: 2.25rem;
+  letter-spacing: 0.25rem;
+  font-weight: bold;
+}
+.break-view .timer h3 {
+  font-size: 1.5rem;
+  color: #999999;
+  font-weight: normal;
+}
+.break-view .button {
+  align-self: center;
+  margin-bottom: 3rem;
+}
+
+button {
+  background-color: transparent;
+  color: #999999;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 1rem;
+  border: 1px solid #999999;
+  border-radius: 5px;
+}
+button:active {
+  background-color: #FFFFFF;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.hourglass-view {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.hourglass-view .hourglass {
+  width: 100%;
+  height: 100vh;
+  background-color: #222222;
+  animation: hourglassAnimation 5s linear forwards;
+}
+@keyframes hourglassAnimation {
+  100% {
+    border-bottom: 0 solid white;
+  }
+  0% {
+    border-bottom: 100vh solid white;
+  }
+}
+.hourglass-view .button {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 3rem;
+}
 
 /*# sourceMappingURL=style.css.map */

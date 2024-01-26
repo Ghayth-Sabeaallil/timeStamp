@@ -1,0 +1,60 @@
+@import "../abstracts/color";
+@import "../abstracts/fonts";
+
+    .set-timer-vy{
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        align-self: center;
+        font-family: $font-pt-family;
+        margin: 20rem 2rem 0 2rem;
+
+        .set-time{
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+            width: auto;
+            justify-content: space-between;
+            .set-time-number{
+                text-align: center;
+                h1{
+                    font-size: 5rem;
+                    height: 5.5rem;
+                }
+                h3{
+                    font-size: 1rem;
+                    font-weight: 100;
+                    color: rgba($alarm-background-color, 0.6);
+                }
+            }
+        }
+        ul{
+            margin-top: 10rem;
+            margin-bottom: 2rem;
+            letter-spacing: 0.13rem;
+            li{
+                font-size: 1.3rem;
+                display: flex;
+                gap: 1rem;
+                display: flex;
+                align-items: center;
+                margin-top: 1rem; 
+                .checkbox{
+                    height: 1.3rem;
+                    width: 1.3rem;
+                }
+            }
+        }
+        .start-button{
+            border: .15rem solid black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 6rem;
+            height: 3.6rem;
+            border-radius: .6rem;
+            font-size: 1.4rem;
+            letter-spacing: .2rem;
+            font-weight: 100;
+        }
+    }

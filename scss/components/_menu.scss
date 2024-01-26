@@ -1,0 +1,30 @@
+@import "../abstracts/color";
+@import "../abstracts/fonts";
+
+
+.timer-options{
+    display: none;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+    ul{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 2rem;
+        
+    }
+    li{
+        list-style-type: none;
+        font-size: 24px;
+            font-family: $font-pt-family;
+            font-weight: 700;
+            text-decoration: none;
+            text-transform: uppercase;
+            color: $font-color-primary;
+    }
+}
+
+
+@media screen and (device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3){
+}

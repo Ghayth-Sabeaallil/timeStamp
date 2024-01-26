@@ -1,0 +1,83 @@
+@import "../abstracts/color";
+@import "../abstracts/fonts";
+
+.header {
+    margin: 1em 1em 1em 1em;
+    display: none;
+
+    img {
+        padding-right: 7.5rem;
+    }
+
+    p {
+        color: $font-color-primary;
+        font-family: "PT Sans";
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: 2px;
+    }
+}
+main{
+    display:contents;
+}
+
+
+.analog-main {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 85vh;
+    gap: 8rem;
+
+    .clock {
+        display: contents;
+
+        .sec {
+            position: absolute;
+            padding-bottom: 7.5rem;
+            margin-bottom: 10.8rem;
+            animation-play-state: running;
+            transform-origin: center;
+        }
+
+        .min {
+            position: absolute;
+            padding-bottom: 7.25rem;
+            margin-bottom: 10.8rem;
+            transform-origin: center;
+        }
+
+        @keyframes secondsMotion {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    }
+
+    .abrot-timer {
+        display: inline-flex;
+        padding: 10px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        border-radius: 5px;
+        border: 1px solid #222;
+        opacity: 0.6;
+        color: $font-color-primary;
+        text-align: center;
+        font-family: "PT Sans";
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: 1.6px;
+        text-transform: uppercase;
+    }
+}
